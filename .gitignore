@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Generated Instagram images (downloaded at build time)
+/public/instagram/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

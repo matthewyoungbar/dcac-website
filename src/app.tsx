@@ -1,8 +1,25 @@
-import { useState } from 'preact/hooks'
+import { useState, useEffect, useRef } from 'preact/hooks'
+import { InstagramFeed } from './InstagramFeed'
+import { useSchedule } from './useSchedule'
 import './app.css'
 
 export function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const heroInnerRef = useRef<HTMLDivElement>(null)
+  const { events: schedEvents, loading: schedLoading } = useSchedule()
+
+  useEffect(() => {
+    const el = heroInnerRef.current
+    if (!el) return
+    const hero = el.closest('section') as HTMLElement | null
+    function onScroll() {
+      if (!el || !hero) return
+      const y = Math.min(window.scrollY, hero.offsetHeight)
+      el.style.transform = `translateY(${y * 0.22}px)`
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   function toggleMenu() {
     setMenuOpen(open => !open)
@@ -58,7 +75,7 @@ export function App() {
           </svg>
         </div>
         <div className="wrap">
-          <div className="hero-inner">
+          <div ref={heroInnerRef} className="hero-inner">
             <span className="eyebrow">DC's LGBTQ+ swim team</span>
             <h1>Come swim with us.</h1>
             <p className="sub">Every body, every stroke, every pace. From first-timers to world champions, there's water here for you.</p>
@@ -162,19 +179,25 @@ export function App() {
             <a href="#">Full schedule →</a>
           </div>
           <div className="chips">
-            <span className="chip b">Wed · 7pm · Wilson</span>
-            <span className="chip d">Sat · 9am · Takoma</span>
-            <span className="chip r">Sun · 10am · Marie Reed</span>
+            {schedLoading && <span className="chip b" style={{ opacity: 0.5 }}>Loading…</span>}
+            {!schedLoading && schedEvents.length === 0 && (
+              <span className="chip b" style={{ opacity: 0.5 }}>No practices this week</span>
+            )}
+            {schedEvents.map(e => (
+              <span key={e.id} className={`chip ${e.color}`}>{e.label}</span>
+            ))}
           </div>
         </div>
 
-        <p className="reach">Not sure where to start? Email <a href="mailto:hello@swimdcac.org">hello@swimdcac.org</a> — a real person writes back.</p>
+        <InstagramFeed />
+
+        <p className="reach">Not sure where to start? Email <a href="mailto:membership@swimdcac.org">hello@swimdcac.org</a> — a real person writes back.</p>
       </main>
 
       <footer>
         <div className="wrap foot">
           <div>
-            <p className="lede">DC's LGBTQ+ swim team since 1986.</p>
+            <p className="lede">DC's premiere Master's swim team since 1986.</p>
             <div className="social">
               <a href="#" aria-label="Instagram">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -209,6 +232,14 @@ export function App() {
             <a href="#">Coaches</a>
             <a href="#">Member login</a>
             <a href="mailto:hello@swimdcac.org">Contact</a>
+          </div>
+          <div>
+            <h4>Meet our friends</h4>
+            <a href="https://dpr.dc.gov">District of Columbia Parks &amp; Recreation</a>
+            <a href="https://pvmasters.org">Potomac Valley Masters Swimming</a>
+            <a href="https://www.gaygames.org">Federation of Gay Games</a>
+            <a href="https://www.igla.org">IGLA Aquatics</a>
+            <a href="https://teamdc.org">Team DC</a>
           </div>
         </div>
         <div className="wrap foot-bot">
