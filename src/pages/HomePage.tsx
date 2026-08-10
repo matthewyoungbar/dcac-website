@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'preact/hooks'
-import { InstagramFeed } from './InstagramFeed'
-import { useSchedule } from './useSchedule'
+import { InstagramFeed } from '../components/InstagramFeed.tsx'
+import { useSchedule } from '../useSchedule.ts'
+import { Tile } from '../components/Tile.tsx'
 
 export function HomePage() {
   const heroInnerRef = useRef<HTMLDivElement>(null)
@@ -68,63 +69,57 @@ export function HomePage() {
         </a>
 
         <div className="tiles">
-          <a className="tile t-blue" id="schedule" href="#">
-            <span className="ic">
+          <Tile
+            color="blue"
+            id="schedule"
+            href="#"
+            title="Practice times"
+            description="When & where we swim"
+            icon={
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <circle cx="12" cy="12" r="9" />
                 <path d="M12 7v5l3 2" />
               </svg>
-            </span>
-            <span><span className="ttl">Practice times</span><br /><span className="desc">When &amp; where we swim</span></span>
-            <span className="arr">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </span>
-          </a>
-          <a className="tile t-red" href="/competition">
-            <span className="ic">
+            }
+          />
+          <Tile
+            color="red"
+            href="/competition"
+            title="Competition & events"
+            description="Race days & socials"
+            icon={
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <rect x="3" y="4" width="18" height="17" rx="2" />
                 <path d="M3 9h18M8 2v4M16 2v4" />
               </svg>
-            </span>
-            <span><span className="ttl">Competition &amp; events</span><br /><span className="desc">Race days &amp; socials</span></span>
-            <span className="arr">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </span>
-          </a>
-          <a className="tile t-purple" id="about" href="#">
-            <span className="ic">
+            }
+          />
+          <Tile
+            color="purple"
+            id="about"
+            href="#"
+            title="Who we are"
+            description="Our story & community"
+            icon={
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <circle cx="9" cy="8" r="3" />
                 <circle cx="17" cy="9" r="2.5" />
                 <path d="M3 20c0-3 2.7-5 6-5s6 2 6 5M16 14c2.5 0 5 1.5 5 5" />
               </svg>
-            </span>
-            <span><span className="ttl">Who we are</span><br /><span className="desc">Our story &amp; community</span></span>
-            <span className="arr">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </span>
-          </a>
-          <a className="tile t-deep" href="#">
-            <span className="ic">
+            }
+          />
+          <Tile
+            color="deep"
+            href="https://www.clubassistant.com/club/login_form.cfm?c=1344"
+            title="Member login"
+            description="Dues & member info"
+            icon={
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <circle cx="12" cy="8" r="4" />
                 <path d="M5 21c0-4 3-7 7-7s7 3 7 7" />
               </svg>
-            </span>
-            <span><span className="ttl">Member login</span><br /><span className="desc">Dues &amp; member info</span></span>
-            <span className="arr">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </span>
-          </a>
+            }
+          />
         </div>
 
         <div className="sched">

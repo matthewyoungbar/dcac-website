@@ -1,8 +1,8 @@
 import { Router, Route, Switch } from 'wouter'
-import { Header } from './Header'
-import { Footer } from './Footer'
-import { HomePage } from './HomePage'
-import { CompetitionPage } from './CompetitionPage'
+import { Header } from './components/Header.tsx'
+import { Footer } from './components/Footer.tsx'
+import { HomePage } from './pages/HomePage.tsx'
+import { CompetitionPage } from './pages/CompetitionPage.tsx'
 import './app.css'
 
 export function App() {

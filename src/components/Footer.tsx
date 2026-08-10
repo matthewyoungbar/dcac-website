@@ -39,14 +39,14 @@ export function Footer() {
         </div>
         <div>
           <h4>Get going</h4>
-          <a href="/#join">New swimmers</a>
-          <a href="/#join">How to join</a>
-          <a href="/#schedule">Practice times</a>
+          <a href="/public#join">New swimmers</a>
+          <a href="/public#join">How to join</a>
+          <a href="/public#schedule">Practice times</a>
           <Link href="/competition">Competition &amp; events</Link>
         </div>
         <div>
           <h4>The club</h4>
-          <a href="/#about">About us</a>
+          <a href="/public#about">About us</a>
           <a href="#">Coaches</a>
           <a href="#">Member login</a>
           <a href="mailto:hello@swimdcac.org">Contact</a>

@@ -1,13 +1,9 @@
+import { Tile } from '../components/Tile.tsx'
+
 const cities = [
   'Paris', 'Honolulu', 'Montreal', 'Stockholm', 'New York City',
   'Cologne', 'Miami', 'Reykjavik', 'Melbourne', 'Seattle', 'San Francisco', 'Sydney',
 ]
-
-const ArrowIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-    <path d="M5 12h14M13 6l6 6-6 6" />
-  </svg>
-)
 
 export function CompetitionPage() {
   return (
@@ -78,27 +74,27 @@ export function CompetitionPage() {
             Many DCAC swimmers also compete in open water swims, triathlons, and running races. Our members are active across DC-area LGBTQ+ sports leagues:
           </p>
           <div className="tiles">
-            <a className="tile t-blue" href="https://www.dcfrontrunners.org" target="_blank" rel="noopener noreferrer">
-              <span>
-                <span className="ttl">DC Front Runners</span><br />
-                <span className="desc">Running &amp; walking club</span>
-              </span>
-              <span className="arr"><ArrowIcon /></span>
-            </a>
-            <a className="tile t-purple" href="https://www.dctriclub.org/series/triout-events/" target="_blank" rel="noopener noreferrer">
-              <span>
-                <span className="ttl">TriOut Multisport</span><br />
-                <span className="desc">LGBTQ+ triathlon club</span>
-              </span>
-              <span className="arr"><ArrowIcon /></span>
-            </a>
-            <a className="tile t-red" href="https://dseahorses.org/" target="_blank" rel="noopener noreferrer">
-              <span>
-                <span className="ttl">DSeahorses</span><br />
-                <span className="desc">Water polo club</span>
-              </span>
-              <span className="arr"><ArrowIcon /></span>
-            </a>
+            <Tile
+              color="blue"
+              href="https://www.dcfrontrunners.org"
+              external
+              title="DC Front Runners"
+              description="Running & walking club"
+            />
+            <Tile
+              color="purple"
+              href="https://www.dctriclub.org/series/triout-events/"
+              external
+              title="TriOut Multisport"
+              description="LGBTQ+ triathlon club"
+            />
+            <Tile
+              color="red"
+              href="https://dseahorses.org/"
+              external
+              title="DSeahorses"
+              description="Water polo club"
+            />
           </div>
         </section>
 

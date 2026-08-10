@@ -73,19 +73,11 @@ main{padding:54px 0 10px}
 .feature h2{font-size:clamp(24px,3.4vw,32px);color:var(--navy);margin-bottom:8px}
 .feature p{color:var(--blue-600);font-size:16px;margin-bottom:18px;max-width:480px}
 
-.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.tile{display:flex;gap:15px;align-items:center;padding:20px 22px;border-radius:var(--radius);transition:transform .16s,box-shadow .2s}
-.tile:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(4,44,83,.10)}
-.tile .ic{flex-shrink:0;width:46px;height:46px;border-radius:12px;display:grid;place-items:center}
-.tile .ic svg{width:24px;height:24px}
-.tile .ttl{font-weight:600;font-size:17px;font-family:var(--display)}
-.tile .desc{font-size:14px}
-.tile .arr{margin-left:auto;opacity:.45;transition:transform .2s,opacity .2s}
-.tile:hover .arr{transform:translateX(3px);opacity:.85}
-.t-blue{background:var(--blue-50)} .t-blue .ic{background:#fff} .t-blue .ttl{color:var(--blue-800)} .t-blue .desc{color:var(--blue-600)} .t-blue svg,.t-blue .arr{color:var(--blue-600)}
-.t-red{background:var(--red-50)} .t-red .ic{background:#fff} .t-red .ttl{color:var(--red-900)} .t-red .desc{color:var(--red-700)} .t-red svg,.t-red .arr{color:var(--red)}
-.t-purple{background:var(--purple-50)} .t-purple .ic{background:#fff} .t-purple .ttl{color:var(--purple-800)} .t-purple .desc{color:var(--purple)} .t-purple svg,.t-purple .arr{color:var(--purple)}
-.t-deep{background:var(--blue-100)} .t-deep .ic{background:rgba(255,255,255,.6)} .t-deep .ttl{color:var(--navy)} .t-deep .desc{color:var(--blue-800)} .t-deep svg,.t-deep .arr{color:var(--blue-800)}
+/* t-* are shared accent-color classes; background here, tile-specific styling lives in components/Tile.css */
+.t-blue{background:var(--blue-50)}
+.t-red{background:var(--red-50)}
+.t-purple{background:var(--purple-50)}
+.t-deep{background:var(--blue-100)}
 
 /* schedule */
 .sched{margin-top:18px;background:var(--surface);border-radius:var(--radius);padding:20px 22px}
@@ -161,7 +153,6 @@ footer{margin-top:48px;background:var(--navy);color:#fff}
   .links a{padding:13px 24px}
   .links .btn{margin:8px 24px}
   .menu-btn{display:block}
-  .tiles{grid-template-columns:1fr}
   .foot{grid-template-columns:1fr;gap:30px}
   .hero-inner{padding:54px 0 78px}
 }
