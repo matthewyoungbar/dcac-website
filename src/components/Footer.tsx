@@ -39,8 +39,8 @@ export function Footer() {
         </div>
         <div>
           <h4>Get going</h4>
-          <a href="/public#join">New swimmers</a>
-          <a href="/public#join">How to join</a>
+          <Link href="/join">New swimmers</Link>
+          <Link href="/join">How to join</Link>
           <a href="/public#schedule">Practice times</a>
           <Link href="/competition">Competition &amp; events</Link>
         </div>
