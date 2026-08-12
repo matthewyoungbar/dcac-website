@@ -1,0 +1,24 @@
+/* Practice-focus tag. Each theme sets --th, and the variants below decide how
+   much of it to show: a bare dot, an inline label, or a filled pill. */
+.th{display:inline-flex;align-items:center;gap:5px;min-width:0;--th:var(--muted);--th-bg:var(--surface)}
+.th-distance{--th:var(--blue-600);--th-bg:var(--blue-50)}
+.th-race{--th:var(--purple-800);--th-bg:var(--purple-50)}
+.th-sprint{--th:var(--red-700);--th-bg:var(--red-50)}
+.th-rainbow{--th:var(--purple-800);--th-bg:var(--purple-50)}
+
+.th-dot{width:7px;height:7px;border-radius:50%;background:var(--th);flex:none}
+.th-label{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--th);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* the team's own flag, for the one theme that has earned it */
+.th-rainbow .th-dot{background:conic-gradient(from .25turn,#E24B4A,#EF9F27,#97C459,#1D9E75,#378ADD,#7F77DD,#E24B4A)}
+.th-rainbow .th-label{background:linear-gradient(90deg,#D8433F,#D98A1E,#4E9E3E,#1D9E75,#2F7ED0,#7F77DD);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+
+.th-pill{background:var(--th-bg);border-radius:999px;padding:5px 11px 5px 9px;gap:6px}
+.th-pill .th-label{font-size:11.5px}
+
+@media(forced-colors:active){
+  .th-label{color:CanvasText;background:none;-webkit-text-fill-color:CanvasText}
+  .th-dot{background:CanvasText}
+}

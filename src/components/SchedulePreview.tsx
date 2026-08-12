@@ -1,4 +1,6 @@
+import { Link } from 'wouter'
 import { useSchedule } from '../useSchedule.ts'
+import { ThemeTag } from './ThemeTag.tsx'
 import './SchedulePreview.css'
 
 export function SchedulePreview() {
@@ -13,7 +15,7 @@ export function SchedulePreview() {
           </svg>
           This week in the pool
         </span>
-        <a href="#">Full schedule →</a>
+        <Link href="/schedule">Full schedule →</Link>
       </div>
       {error ? (
         <p className="sched-msg">Schedule unavailable right now — email us and we'll tell you when we're swimming.</p>
@@ -25,6 +27,7 @@ export function SchedulePreview() {
                 <span className="day-name">{d.isToday ? 'Today' : d.name}</span>
                 <span className="day-num">{d.date}</span>
               </div>
+              {!loading && <ThemeTag theme={d.theme} />}
               {loading ? (
                 <span className="day-skel" aria-hidden="true" />
               ) : d.practices.length ? (

@@ -71,7 +71,7 @@ export function HomePage() {
           <Tile
             color="blue"
             id="schedule"
-            href="#"
+            href="/schedule"
             title="Practice times"
             description="When & where we swim"
             icon={

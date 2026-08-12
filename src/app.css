@@ -79,6 +79,23 @@ main{padding:54px 0 10px}
 .t-purple{background:var(--purple-50)}
 .t-deep{background:var(--blue-100)}
 
+/* panel + chips are shared page furniture (schedule, competition);
+   the week-grid internals live in components/SchedulePreview.css */
+.sched{margin-top:18px;background:var(--surface);border-radius:var(--radius-lg);padding:20px 22px 22px}
+.sched-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.sched-head .lbl{display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px}
+.sched-head .lbl svg{width:18px;height:18px;color:var(--blue-600)}
+.sched-head a{font-size:14px;color:var(--blue-600);font-weight:500}
+.chips{display:flex;gap:9px;flex-wrap:wrap}
+.chip{font-size:14px;font-weight:500;padding:8px 15px;border-radius:999px}
+.chip.b{background:var(--blue-50);color:var(--blue-600)}
+.chip.d{background:var(--blue-100);color:var(--blue-800)}
+.chip.r{background:var(--red-50);color:var(--red-700)}
+/* shared loading-skeleton pulse */
+@keyframes skel{0%,100%{opacity:1}50%{opacity:.45}}
+/* set while a modal dialog is open — showModal() blocks clicks but not scrolling */
+body.modal-open{overflow:hidden}
+
 .reach{text-align:center;color:var(--muted);font-size:15px;margin:30px 0 8px}
 .reach a{color:var(--blue-600);font-weight:600}
 

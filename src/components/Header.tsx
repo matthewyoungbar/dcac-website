@@ -33,7 +33,7 @@ export function Header() {
           </button>
           <nav className={`links${menuOpen ? ' open' : ''}`}>
             <Link href="/join" onClick={close}>Join</Link>
-            <a href="/public#schedule" onClick={close}>Schedule</a>
+            <Link href="/schedule" onClick={close}>Schedule</Link>
             <Link href="/competition" onClick={close}>Competition</Link>
             <a href="/public#about" onClick={close}>About</a>
             <Link className="btn btn-red" href="/join" style={{ color: '#fff' }} onClick={close}>Come swim</Link>

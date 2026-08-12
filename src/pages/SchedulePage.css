@@ -1,0 +1,123 @@
+/* subscribe row */
+.subscribe{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.subscribe-lbl{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--blue-600);margin-right:3px}
+
+/* small pill button, shared by the subscribe row and the modal's add-to actions */
+.mini{font-family:var(--body);font-size:13px;font-weight:600;line-height:1;cursor:pointer;
+  background:var(--white);color:var(--blue-800);border:1px solid var(--blue-200);
+  border-radius:8px;padding:8px 12px;transition:background .18s,border-color .18s}
+.mini:hover{background:var(--blue-50);border-color:var(--blue-400)}
+.mini:focus-visible{outline:2px solid var(--blue-400);outline-offset:2px}
+
+/* month bar */
+.cal-bar{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.cal-title{font-family:var(--display);font-size:clamp(20px,2.8vw,26px);font-weight:600;color:var(--navy);min-width:190px}
+.cal-nav{font-family:var(--body);font-size:22px;line-height:1;cursor:pointer;color:var(--blue-800);
+  background:var(--white);border:1px solid var(--blue-200);border-radius:10px;width:38px;height:38px;
+  display:grid;place-items:center;transition:background .18s,border-color .18s}
+.cal-nav:hover{background:var(--blue-50);border-color:var(--blue-400)}
+.cal-nav:focus-visible,.cal-today:focus-visible{outline:2px solid var(--blue-400);outline-offset:2px}
+.cal-count{margin-left:auto;font-size:14px;color:var(--muted)}
+.cal-today{font-family:var(--body);font-size:13px;font-weight:600;cursor:pointer;color:var(--blue-800);
+  background:var(--blue-50);border:1px solid var(--blue-200);border-radius:999px;padding:7px 14px}
+.cal-today:hover{background:var(--blue-100)}
+
+/* month grid */
+.cal{background:var(--surface);border-radius:var(--radius-lg);padding:14px}
+.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:6px}
+.cal-dow span{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--blue-600);text-align:center;padding:2px 0}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+
+.cal-cell{font-family:var(--body);text-align:left;display:flex;flex-direction:column;gap:5px;
+  background:var(--white);border:1px solid var(--line);border-radius:10px;padding:7px 8px 9px;
+  overflow:hidden;transition:border-color .18s,box-shadow .18s,background .18s}
+.cal-cell.has{cursor:pointer}
+.cal-cell:disabled{cursor:default;background:transparent;border-style:dashed}
+.cal-cell.out{opacity:.5}
+.cal-cell.has:hover{border-color:var(--blue-400)}
+.cal-cell.today{border-color:var(--blue-400);box-shadow:inset 0 0 0 1px var(--blue-400)}
+.cal-cell.sel{background:var(--blue-50);border-color:var(--blue-600);box-shadow:0 0 0 1px var(--blue-600)}
+.cal-cell:focus-visible{outline:2px solid var(--blue-400);outline-offset:2px}
+
+.cell-top{display:flex;align-items:center;justify-content:space-between;gap:4px}
+.cell-top .th{display:none} /* the dot is a phone-only stand-in; see the media query */
+.cell-num{font-size:13px;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1}
+.cal-cell.today .cell-num{color:var(--red)}
+.cal-cell:disabled .cell-num{color:var(--muted);font-weight:500}
+.cell-events{display:flex;flex-direction:column;gap:4px;min-width:0}
+.cell-ev{display:block;background:var(--blue-50);border-left:2px solid var(--blue-400);
+  border-radius:4px;padding:3px 5px;min-width:0}
+.cal-cell.sel .cell-ev{background:var(--white)}
+.cell-ev-time{display:block;font-size:12px;font-weight:600;color:var(--blue-800);line-height:1.25}
+.cell-ev-loc{display:block;font-size:11px;color:var(--muted);line-height:1.25;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cell-dots{display:none;gap:3px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--blue-400)}
+.cell-skel{height:26px;border-radius:5px;background:var(--blue-50);animation:skel 1.4s ease-in-out infinite}
+
+.cal-hint{margin-top:12px;font-size:13.5px;color:var(--muted);text-align:center}
+
+/* selected-day modal — where the add-to-calendar actions live */
+.day-modal{border:none;padding:0;background:transparent;max-width:none;max-height:none;
+  width:100%;height:100%;margin:auto;overflow:visible}
+.day-modal::backdrop{background:rgba(4,44,83,.45);backdrop-filter:blur(2px)}
+.day-modal:not([open]){display:none}
+.modal-inner{width:min(560px,calc(100vw - 32px));max-height:calc(100vh - 64px);overflow-y:auto;
+  margin:auto;position:absolute;inset:0;height:max-content;
+  background:var(--white);border-radius:var(--radius-lg);padding:24px 26px 26px;
+  box-shadow:0 24px 60px rgba(4,44,83,.28);animation:modal-in .18s ease-out}
+@keyframes modal-in{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}
+.modal-dow{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-600)}
+.modal-date{font-family:var(--display);font-size:26px;font-weight:600;color:var(--navy);line-height:1.15}
+.modal-theme{display:inline-block;margin-top:8px}
+.modal-x{font-family:var(--body);font-size:16px;line-height:1;cursor:pointer;color:var(--blue-800);
+  background:var(--surface);border:none;border-radius:9px;width:34px;height:34px;
+  display:grid;place-items:center;flex:0 0 auto;transition:background .18s}
+.modal-x:hover{background:var(--blue-100)}
+.modal-x:focus-visible{outline:2px solid var(--blue-400);outline-offset:2px}
+.detail-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.ev{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  background:var(--surface);border-radius:var(--radius);padding:14px 16px}
+.ev-main{min-width:0}
+.ev-time{display:block;font-weight:600;font-size:17px;color:var(--navy);letter-spacing:-.01em}
+.ev-title{display:block;font-size:15px;color:var(--ink);margin-top:1px}
+.ev-loc{display:block;font-size:13.5px;color:var(--muted);margin-top:2px}
+.ev-add{display:flex;align-items:center;gap:7px;flex:0 0 auto}
+.ev-add-lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-right:1px}
+
+/* fallback embed — only rendered when the API path fails */
+.embed-frame{width:100%;height:620px;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--white);margin-top:14px}
+
+@media(max-width:760px){
+  .subscribe-lbl{flex:1 1 100%;margin-bottom:2px}
+  .subscribe .mini{flex:1}
+  .cal-title{min-width:0;flex:1}
+  .cal-count{flex:1 1 100%;margin-left:0;order:3}
+  /* cells are too narrow for event text — collapse to dots and let the detail panel carry it */
+  .cal{padding:10px}
+  .cal-dow{gap:4px}
+  .cal-grid{gap:4px;grid-template-rows:none !important}
+  .cal-cell{min-height:52px;align-items:center;gap:4px;padding:7px 4px}
+  .cell-top{flex-direction:column;gap:3px}
+  .cell-top .th{display:inline-flex}
+  .cell-num{font-size:14px}
+  /* the standalone label is too wide here — the dot above carries the theme */
+  .cal-cell>.th{display:none}
+  .cell-events{display:none}
+  .cell-dots{display:flex}
+  .cell-skel{width:16px;height:5px}
+  .ev{align-items:flex-start}
+  .ev-add{width:100%;padding-top:2px}
+  .ev-add-lbl{display:none}
+  .mini{flex:1;text-align:center;padding:9px 12px}
+  .modal-inner{padding:20px}
+  .modal-date{font-size:22px}
+  .embed-frame{height:520px}
+}
+@media(prefers-reduced-motion:reduce){
+  .cell-skel,.modal-inner{animation:none}
+}
