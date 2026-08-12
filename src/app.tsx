@@ -4,6 +4,7 @@ import { Footer } from './components/Footer.tsx'
 import { HomePage } from './pages/HomePage.tsx'
 import { CompetitionPage } from './pages/CompetitionPage.tsx'
 import { JoinPage } from './pages/JoinPage.tsx'
+import { TrialPage } from './pages/TrialPage.tsx'
 import './app.css'
 
 export function App() {
@@ -14,6 +15,7 @@ export function App() {
         <Route path="/" component={HomePage} />
         <Route path="/competition" component={CompetitionPage} />
         <Route path="/join" component={JoinPage} />
+        <Route path="/trial" component={TrialPage} />
       </Switch>
       <Footer />
     </Router>

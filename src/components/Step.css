@@ -1,0 +1,9 @@
+.steps{display:flex;flex-direction:column;gap:24px}
+.step{background:var(--surface);border-radius:var(--radius-lg);padding:28px 32px}
+.step-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.step-num{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:16px}
+.step-title{font-size:clamp(19px,2.4vw,23px);color:var(--navy)}
+.step-price{display:inline-block;font-weight:600;color:var(--red);font-size:15px;margin-bottom:12px}
+.step-body{color:var(--muted);font-size:15.5px}
+.step-body + .step-body{margin-top:12px}
+.step-body a{color:var(--blue-600);font-weight:600}

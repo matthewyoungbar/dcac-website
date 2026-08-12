@@ -1,3 +1,5 @@
+import { Callout } from '../components/Callout.tsx'
+import { Step, Steps } from '../components/Step.tsx'
 import './JoinPage.css'
 
 const duesOptions = [
@@ -20,106 +22,98 @@ export function JoinPage() {
 
       <main id="main" className="wrap" style={{ paddingTop: '48px', paddingBottom: '10px' }}>
 
-        <div className="join-callout">
-          <p>
-            Want to try it out first? We offer two free trial swims to all prospective new members!{' '}
-            <a href="#steps">Learn more here.</a>
-          </p>
+        <div style={{ marginBottom: '36px' }}>
+          <Callout>
+            <p>
+              Want to try it out first? We offer two free trial swims to all prospective new members!{' '}
+              <a href="/trial">Learn more here.</a>
+            </p>
+          </Callout>
         </div>
 
-        <section className="meets-section" id="steps">
+        <section className="meets-section">
           <h2 className="section-title">When you're ready to become a member</h2>
           <p className="section-body">You need to do three things, in the following order:</p>
 
-          <div className="join-steps" style={{ marginTop: '20px' }}>
-            <div className="join-step">
-              <div className="join-step-head">
-                <span className="join-step-num">1</span>
-                <h3 className="join-step-title">Join U.S. Masters Swimming (USMS)</h3>
-              </div>
-              <span className="join-step-price">$75.00 per Calendar Year</span>
-              <p className="join-step-body">
-                USMS is the national organizing body for all Masters swimmers in the United States. Registration with USMS is <strong>mandatory</strong> for every calendar year and serves as your liability insurance. It's required in order for you to practice with DCAC and to be eligible to compete in meets. Choose Potomac Valley as your LMSC and then DCAC as your club team. Included in your USMS membership is a calendar-year subscription to USMS's SWIMMER Magazine and The Swimmer's Ear newsletter published by our regional USMS Committee, Potomac Valley LMSC. USMS provides accident insurance to its members at team practices and at USMS-sanctioned events. <a href="#">Register online.</a>
-              </p>
-              <div className="join-step-note">
-                If you are new to DCAC and already USMS registered, please contact the Potomac Valley registrar to change your USMS team affiliation using <a href="#">this form</a> if you intend to compete as a member of DCAC.
-              </div>
-            </div>
+          <div style={{ marginTop: '20px' }}>
+            <Steps>
+              <Step number={1} title="Join U.S. Masters Swimming (USMS)" price="$75.00 per Calendar Year">
+                <p className="step-body">
+                  USMS is the national organizing body for all Masters swimmers in the United States. Registration with USMS is <strong>mandatory</strong> for every calendar year and serves as your liability insurance. It's required in order for you to practice with DCAC and to be eligible to compete in meets. Choose Potomac Valley as your LMSC and then DCAC as your club team. Included in your USMS membership is a calendar-year subscription to USMS's SWIMMER Magazine and The Swimmer's Ear newsletter published by our regional USMS Committee, Potomac Valley LMSC. USMS provides accident insurance to its members at team practices and at USMS-sanctioned events. <a href="#">Register online.</a>
+                </p>
+                <div style={{ marginTop: '16px' }}>
+                  <Callout tone="blue" compact>
+                    <p>
+                      If you are new to DCAC and already USMS registered, please contact the Potomac Valley registrar to change your USMS team affiliation using <a href="#">this form</a> if you intend to compete as a member of DCAC.
+                    </p>
+                  </Callout>
+                </div>
+              </Step>
 
-            <div className="join-step">
-              <div className="join-step-head">
-                <span className="join-step-num">2</span>
-                <h3 className="join-step-title">Register with DCAC and Choose a Club Dues Structure</h3>
-              </div>
-              <p className="join-step-body">
-                Register in our Club Assistant platform: <a href="#">DCAC registration form here</a>. Note: do not use this link if you have registered for DCAC in the past — instead, email <a href="mailto:membership@swimdcac.org">membership@swimdcac.org</a> to request a link to reactivate your existing account.
-              </p>
-              <p className="join-step-body">
-                Once you complete the membership process, you'll be asked to choose a club dues structure. Dues are paid up front and are non-refundable. If you have questions or wish to cancel your membership, please email <a href="mailto:membership@swimdcac.org">membership@swimdcac.org</a>.
-              </p>
+              <Step number={2} title="Register with DCAC and Choose a Club Dues Structure">
+                <p className="step-body">
+                  Register in our Club Assistant platform: <a href="#">DCAC registration form here</a>. Note: do not use this link if you have registered for DCAC in the past — instead, email <a href="mailto:membership@swimdcac.org">membership@swimdcac.org</a> to request a link to reactivate your existing account.
+                </p>
+                <p className="step-body">
+                  Once you complete the membership process, you'll be asked to choose a club dues structure. Dues are paid up front and are non-refundable. If you have questions or wish to cancel your membership, please email <a href="mailto:membership@swimdcac.org">membership@swimdcac.org</a>.
+                </p>
 
-              <div className="join-dues-grid">
-                {duesOptions.map(o => (
-                  <div className="join-dues-option" key={o.amt}>
-                    <span className="amt">{o.amt}</span>
-                    <p>{o.body}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+                <div className="join-dues-grid">
+                  {duesOptions.map(o => (
+                    <div className="join-dues-option" key={o.amt}>
+                      <span className="amt">{o.amt}</span>
+                      <p>{o.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </Step>
 
-            <div className="join-step">
-              <div className="join-step-head">
-                <span className="join-step-num">3</span>
-                <h3 className="join-step-title">Register in DPR RecTrac and purchase a DPR Masters Swim Membership</h3>
-              </div>
-              <span className="join-step-price">$50.00 D.C. residents · $62.50 non-residents, per calendar year</span>
-              <p className="join-step-body">
-                Cost is prorated and visible during checkout. <a href="#">Registration and purchase location here.</a> All of our practice locations use a scanning system called RecTrac — if you aren't registered in the system and haven't purchased the DPR Masters Swim Membership, DPR will not let you in. Once registered with DPR, select Memberships (Aquatics &amp; Fitness), then DPR Masters Swim Membership.
-              </p>
-            </div>
+              <Step
+                number={3}
+                title="Register in DPR RecTrac and purchase a DPR Masters Swim Membership"
+                price="$50.00 D.C. residents · $62.50 non-residents, per calendar year"
+              >
+                <p className="step-body">
+                  Cost is prorated and visible during checkout. <a href="#">Registration and purchase location here.</a> All of our practice locations use a scanning system called RecTrac — if you aren't registered in the system and haven't purchased the DPR Masters Swim Membership, DPR will not let you in. Once registered with DPR, select Memberships (Aquatics &amp; Fitness), then DPR Masters Swim Membership.
+                </p>
+              </Step>
+            </Steps>
           </div>
         </section>
 
         <section className="meets-section">
           <h2 className="section-title">Scholarships</h2>
-          <div className="join-scholarship">
+          <Callout tone="purple">
             <p>
               DCAC is committed to helping swimmers who face financial challenges. If you have a financial hardship and would be unable to participate at the regular dues rates above, please contact the Treasurer (<a href="mailto:treasurer@swimdcac.org">treasurer@swimdcac.org</a>) about reductions in dues based on financial hardship, or if you're interested in the Under 30 Award. Pool dues may be reduced on an individual basis at the discretion of the Board. See our scholarship tab on the website.
             </p>
-          </div>
+          </Callout>
         </section>
 
-        <div className="join-fineprint">
-          <p>
-            Failure to register for USMS, DCAC, and DPR prior to practice will result in you not being permitted to swim. If you wish to change your Pool Dues structure during the year, you must contact the Membership Chair and Treasurer in advance. The unlimited swim options (year/quarterly/monthly) all auto-renew — email the Treasurer and Membership Chair if you wish to cancel. Please contact the Membership Chair (<a href="mailto:membership@swimdcac.org">membership@swimdcac.org</a>), the Treasurer (<a href="mailto:treasurer@swimdcac.org">treasurer@swimdcac.org</a>), or any Board Member for more information.
-          </p>
+        <div style={{ marginBottom: '40px' }}>
+          <Callout tone="neutral">
+            <p>
+              Failure to register for USMS, DCAC, and DPR prior to practice will result in you not being permitted to swim. If you wish to change your Pool Dues structure during the year, you must contact the Membership Chair and Treasurer in advance. The unlimited swim options (year/quarterly/monthly) all auto-renew — email the Treasurer and Membership Chair if you wish to cancel. Please contact the Membership Chair (<a href="mailto:membership@swimdcac.org">membership@swimdcac.org</a>), the Treasurer (<a href="mailto:treasurer@swimdcac.org">treasurer@swimdcac.org</a>), or any Board Member for more information.
+            </p>
+          </Callout>
         </div>
 
         <section className="meets-section">
           <h2 className="section-title">USMS Visitors</h2>
 
-          <div className="join-steps">
-            <div className="join-step">
-              <div className="join-step-head">
-                <span className="join-step-num">1</span>
-                <h3 className="join-step-title">Show up and introduce yourself</h3>
-              </div>
-              <p className="join-step-body">
+          <Steps>
+            <Step number={1} title="Show up and introduce yourself">
+              <p className="step-body">
                 DCAC welcomes visitors from other USMS teams. Just show up at any workout and introduce yourself to the coach. Visitors must show their USMS card — no exceptions. <a href="#">Retrieve your USMS card here.</a> Visitors are welcome for one free swim per quarter. If you wish to swim multiple times, the fee is $15 per workout, payable by Venmo at @swimdcac.
               </p>
-            </div>
+            </Step>
 
-            <div className="join-step">
-              <div className="join-step-head">
-                <span className="join-step-num">2</span>
-                <h3 className="join-step-title">Register with DPR RecTrac</h3>
-              </div>
-              <p className="join-step-body">
+            <Step number={2} title="Register with DPR RecTrac">
+              <p className="step-body">
                 It's <strong>mandatory</strong> that you register with the Department of Parks and Recreation RecTrac system. D.C. residents are permitted into the pools at no charge once registered. Swimmers who live outside the District may be charged a visitor's fee.
               </p>
-            </div>
-          </div>
+            </Step>
+          </Steps>
         </section>
 
         <p className="reach">

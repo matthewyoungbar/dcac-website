@@ -54,7 +54,7 @@ export function Footer() {
         <div>
           <h4>Meet our friends</h4>
           <a href="https://dpr.dc.gov">District of Columbia Parks &amp; Recreation</a>
-          <a href="https://pvmasters.org">Potomac Valley Masters Swimming</a>
+          <a href="https://pvmasters.org/newsite">Potomac Valley Masters Swimming</a>
           <a href="https://www.gaygames.org">Federation of Gay Games</a>
           <a href="https://www.igla.org">IGLA Aquatics</a>
           <a href="https://teamdc.org">Team DC</a>

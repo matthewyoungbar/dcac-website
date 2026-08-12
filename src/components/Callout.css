@@ -1,0 +1,8 @@
+.callout{border-radius:var(--radius-lg);padding:28px 32px}
+.callout p{font-size:16px}
+.callout a{font-weight:600}
+.callout-compact{border-radius:10px;padding:14px 18px}
+.callout-compact p{font-size:14.5px}
+.callout-blue{background:var(--blue-50)} .callout-blue p{color:var(--blue-800)} .callout-blue a{color:var(--blue-600)}
+.callout-purple{background:var(--purple-50)} .callout-purple p{color:var(--ink)} .callout-purple a{color:var(--purple)}
+.callout-neutral{background:var(--surface)} .callout-neutral p{color:var(--muted)} .callout-neutral a{color:var(--blue-600)}
