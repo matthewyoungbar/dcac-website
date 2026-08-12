@@ -1,15 +1,29 @@
 import { useState, useEffect } from 'preact/hooks'
 
-const ICAL_URL =
-  'https://calendar.google.com/calendar/ical/' +
-  'q4p026gk42gbn5d4f6qfl9fpfo%40group.calendar.google.com/public/basic.ics'
+const CALENDAR_ID = 'q4p026gk42gbn5d4f6qfl9fpfo@group.calendar.google.com'
+const API_KEY = import.meta.env.VITE_GOOGLE_CALENDAR_API_KEY
 
-const CHIP_COLORS = ['b', 'd', 'r'] as const
+const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
-export interface ScheduleEvent {
+export interface Practice {
   id: string
-  label: string
-  color: typeof CHIP_COLORS[number]
+  time: string
+  location: string
+}
+
+export interface ScheduleDay {
+  /** Local YYYY-MM-DD, also used as the render key */
+  key: string
+  name: string
+  date: number
+  isToday: boolean
+  practices: Practice[]
+}
+
+interface GCalEvent {
+  id: string
+  location?: string
+  start: { dateTime?: string; date?: string }
 }
 
 function weekBounds() {
@@ -24,23 +38,9 @@ function weekBounds() {
   return { start: mon, end: sun }
 }
 
-// iCal lines can be folded (continuation lines start with a space/tab)
-function unfold(text: string) {
-  return text.replace(/\r\n[ \t]/g, '').replace(/\n[ \t]/g, '')
-}
-
-function parseIcalDate(raw: string): Date | null {
-  // Strip TZID params — value is always after the last colon
-  const val = raw.includes(':') ? raw.split(':').pop()! : raw
-  // All-day: YYYYMMDD
-  if (/^\d{8}$/.test(val)) {
-    return new Date(`${val.slice(0,4)}-${val.slice(4,6)}-${val.slice(6,8)}`)
-  }
-  // With time: YYYYMMDDTHHmmss[Z]
-  const m = val.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(Z?)$/)
-  if (!m) return null
-  const iso = `${m[1]}-${m[2]}-${m[3]}T${m[4]}:${m[5]}:${m[6]}${m[7] || ''}`
-  return new Date(iso)
+/** Local calendar day, not UTC — toISOString() would shift evening practices. */
+function dayKey(d: Date) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
 }
 
 function formatTime(dt: Date) {
@@ -58,63 +58,61 @@ function shortLocation(loc: string) {
     .trim()
 }
 
-function parseEvents(text: string) {
-  const lines = unfold(text).split(/\r?\n/)
-  const events: { id: string; start: Date; location: string }[] = []
-  let inEvent = false
-  let cur: Record<string, string> = {}
-
-  for (const line of lines) {
-    if (line === 'BEGIN:VEVENT') { inEvent = true; cur = {}; continue }
-    if (line === 'END:VEVENT') {
-      inEvent = false
-      const start = parseIcalDate(cur['DTSTART'] ?? '')
-      if (start) events.push({ id: cur['UID'] ?? String(Math.random()), start, location: cur['LOCATION'] ?? '' })
-      continue
-    }
-    if (!inEvent) continue
-    const colon = line.indexOf(':')
-    if (colon === -1) continue
-    // Key may have params: DTSTART;TZID=...:value — store the whole raw value (incl. TZID prefix) for date parsing
-    const prop = line.slice(0, colon).split(';')[0].toUpperCase()
-    if (prop === 'DTSTART') {
-      cur['DTSTART'] = line.slice(colon - line.indexOf(';') > 0 ? 0 : colon + 1) // keep raw for parseIcalDate
-      cur['DTSTART'] = line // store whole line so parseIcalDate can split on ':'
-    } else {
-      cur[prop] = line.slice(colon + 1)
-    }
-  }
-  return events
+/** The seven days Mon–Sun, each pre-seeded with no practices. */
+function emptyWeek(start: Date): ScheduleDay[] {
+  const today = dayKey(new Date())
+  return Array.from({ length: 7 }, (_, i) => {
+    const d = new Date(start)
+    d.setDate(start.getDate() + i)
+    const key = dayKey(d)
+    return { key, name: DAY_NAMES[d.getDay()], date: d.getDate(), isToday: key === today, practices: [] }
+  })
 }
 
 export function useSchedule() {
-  const [events, setEvents] = useState<ScheduleEvent[]>([])
+  const [days, setDays] = useState<ScheduleDay[]>(() => emptyWeek(weekBounds().start))
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    if (!API_KEY) {
+      console.warn('VITE_GOOGLE_CALENDAR_API_KEY is not set — schedule will be empty')
+      setLoading(false)
+      setError(true)
+      return
+    }
+
     const { start, end } = weekBounds()
 
-    fetch(ICAL_URL)
-      .then(r => { if (!r.ok) throw new Error(); return r.text() })
-      .then(text => {
-        const all = parseEvents(text)
-        const week = all
-          .filter(e => e.start >= start && e.start <= end)
-          .sort((a, b) => a.start.getTime() - b.start.getTime())
-        setEvents(
-          week.map((e, i) => {
-            const day = DAYS[e.start.getDay()]
-            const time = formatTime(e.start)
-            const loc = e.location ? ` · ${shortLocation(e.location)}` : ''
-            return { id: e.id, label: `${day} · ${time}${loc}`, color: CHIP_COLORS[i % CHIP_COLORS.length] }
+    const url = new URL(`https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events`)
+    url.searchParams.set('key', API_KEY)
+    url.searchParams.set('timeMin', start.toISOString())
+    url.searchParams.set('timeMax', end.toISOString())
+    url.searchParams.set('singleEvents', 'true')
+    url.searchParams.set('orderBy', 'startTime')
+    url.searchParams.set('maxResults', '50')
+
+    fetch(url)
+      .then(r => { if (!r.ok) throw new Error(); return r.json() })
+      .then((data: { items?: GCalEvent[] }) => {
+        const week = emptyWeek(start)
+        const byDay = new Map(week.map(d => [d.key, d]))
+
+        for (const e of data.items ?? []) {
+          if (!e.start.dateTime) continue
+          const dt = new Date(e.start.dateTime)
+          byDay.get(dayKey(dt))?.practices.push({
+            id: e.id,
+            time: formatTime(dt),
+            location: e.location ? shortLocation(e.location) : '',
           })
-        )
+        }
+
+        setDays(week)
         setLoading(false)
       })
       .catch(() => { setError(true); setLoading(false) })
   }, [])
 
-  return { events, loading, error }
+  return { days, loading, error }
 }

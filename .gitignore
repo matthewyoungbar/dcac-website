@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
 
 # Generated Instagram images (downloaded at build time)
 /public/instagram/

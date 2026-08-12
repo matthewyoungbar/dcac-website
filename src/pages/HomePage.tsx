@@ -1,11 +1,10 @@
 import { useEffect, useRef } from 'preact/hooks'
 import { InstagramFeed } from '../components/InstagramFeed.tsx'
-import { useSchedule } from '../useSchedule.ts'
+import { SchedulePreview } from '../components/SchedulePreview.tsx'
 import { Tile } from '../components/Tile.tsx'
 
 export function HomePage() {
   const heroInnerRef = useRef<HTMLDivElement>(null)
-  const { events: schedEvents, loading: schedLoading } = useSchedule()
 
   useEffect(() => {
     const el = heroInnerRef.current
@@ -122,26 +121,7 @@ export function HomePage() {
           />
         </div>
 
-        <div className="sched">
-          <div className="sched-head">
-            <span className="lbl">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <path d="M12 2c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z" />
-              </svg>
-              This week in the pool
-            </span>
-            <a href="#">Full schedule →</a>
-          </div>
-          <div className="chips">
-            {schedLoading && <span className="chip b" style={{ opacity: 0.5 }}>Loading…</span>}
-            {!schedLoading && schedEvents.length === 0 && (
-              <span className="chip b" style={{ opacity: 0.5 }}>No practices this week</span>
-            )}
-            {schedEvents.map(e => (
-              <span key={e.id} className={`chip ${e.color}`}>{e.label}</span>
-            ))}
-          </div>
-        </div>
+        <SchedulePreview />
 
         <InstagramFeed />
 

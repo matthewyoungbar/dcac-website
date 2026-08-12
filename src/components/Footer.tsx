@@ -65,7 +65,7 @@ export function Footer() {
           <Logo />
           © 2026 District Of Columbia Aquatics Club
         </span>
-        <span className="right">Proudly part of DC's LGBTQ+ community.</span>
+        {/*<span className="right">Proudly part of DC's LGBTQ+ community.</span>*/}
       </div>
     </footer>
   )
