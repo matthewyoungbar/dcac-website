@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'preact/hooks'
+import { Link } from 'wouter'
 import { InstagramFeed } from '../components/InstagramFeed.tsx'
 import { SchedulePreview } from '../components/SchedulePreview.tsx'
 import { Tile } from '../components/Tile.tsx'
@@ -39,8 +40,8 @@ export function HomePage() {
             <h1>District of Columbia Aquatics Club</h1>
             <p className="sub">Every body, every stroke, every pace. There's no waitlist - join today!</p>
             <div className="cta">
-              <a className="btn btn-red" href="/trial" style={{ color: '#fff' }}>Come to a practice</a>
-              <a className="btn btn-ghost" href="/join">How to join</a>
+              <Link className="btn btn-red" href="/trial" style={{ color: '#fff' }}>Come to a practice</Link>
+              <Link className="btn btn-ghost" href="/join">How to join</Link>
             </div>
           </div>
         </div>
@@ -53,7 +54,7 @@ export function HomePage() {
       </section>
 
       <main id="main" className="wrap">
-        <a className="feature" href="/trial">
+        <Link className="feature" href="/trial">
           <svg className="fstars" width="78" height="34" viewBox="0 0 80 34" aria-hidden="true">
             <path d="M12 2 L14.9 8.6 L22 9.2 L16.5 13.9 L18.3 21 L12 17.3 L5.7 21 L7.5 13.9 L2 9.2 L9.1 8.6 Z" transform="translate(2,4) scale(.8)" fill="#C8102E" />
             <path d="M12 2 L14.9 8.6 L22 9.2 L16.5 13.9 L18.3 21 L12 17.3 L5.7 21 L7.5 13.9 L2 9.2 L9.1 8.6 Z" transform="translate(28,4) scale(.8)" fill="#C8102E" />
@@ -65,7 +66,7 @@ export function HomePage() {
             <p>No experience needed. Just bring a suit, goggles, and yourself. We'll meet you at the wall.</p>
             <span className="btn btn-red" style={{ color: '#fff', display: 'inline-block' }}>Plan your first visit</span>
           </div>
-        </a>
+        </Link>
 
         <div className="tiles">
           <Tile

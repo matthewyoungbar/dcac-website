@@ -113,6 +113,7 @@ export function SchedulePage() {
           <a href="mailto:cocaptain@swimdcac.org">cocaptain@swimdcac.org</a>.
         </p>
       </main>
+
     </>
   )
 }

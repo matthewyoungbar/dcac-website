@@ -1,3 +1,4 @@
+import { Link } from 'wouter'
 import { Callout } from '../components/Callout.tsx'
 import { Step, Steps } from '../components/Step.tsx'
 import './JoinPage.css'
@@ -26,7 +27,7 @@ export function JoinPage() {
           <Callout>
             <p>
               Want to try it out first? We offer two free trial swims to all prospective new members!{' '}
-              <a href="/trial">Learn more here.</a>
+              <Link href="/trial">Learn more here.</Link>
             </p>
           </Callout>
         </div>

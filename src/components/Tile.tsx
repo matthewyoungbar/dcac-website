@@ -1,4 +1,5 @@
 import type { ComponentChildren } from 'preact'
+import { Link } from 'wouter'
 import './Tile.css'
 
 export type TileColor = 'blue' | 'red' | 'purple' | 'deep'
@@ -29,6 +30,11 @@ export function Tile({ color, title, description, icon, href, external, arrow = 
       )}
     </>
   )
+
+  // Internal routes go through wouter so they respect the deploy base path.
+  if (href && !external && href.startsWith('/')) {
+    return <Link className={className} id={id} href={href}>{inner}</Link>
+  }
 
   if (href) {
     return (

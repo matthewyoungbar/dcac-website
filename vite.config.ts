@@ -3,6 +3,8 @@ import preact from '@preact/preset-vite'
 import { instagramFeed } from './vite-plugin-instagram'
 
 export default defineConfig({
+  // '/' for a custom domain or local dev; CI sets '/<repo>/' for project Pages.
+  base: process.env.VITE_BASE || '/',
   plugins: [
     preact(),
     instagramFeed({ count: 9 }),

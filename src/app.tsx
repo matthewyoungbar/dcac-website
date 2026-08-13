@@ -8,9 +8,13 @@ import { JoinPage } from './pages/JoinPage.tsx'
 import { TrialPage } from './pages/TrialPage.tsx'
 import './app.css'
 
+// Vite injects the deploy base; wouter wants it without the trailing slash,
+// and an empty string when the site is served from the domain root.
+const routerBase = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 export function App() {
   return (
-    <Router>
+    <Router base={routerBase}>
       <Header />
       <Switch>
         <Route path="/" component={HomePage} />

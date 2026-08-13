@@ -1,3 +1,4 @@
+import { Link } from 'wouter'
 import { Callout } from '../components/Callout.tsx'
 import { Step, Steps } from '../components/Step.tsx'
 
@@ -31,7 +32,7 @@ export function TrialPage() {
         <div style={{ marginBottom: '36px' }}>
           <Callout>
             <p>
-              Ready to join? <a href="/join">Learn more about the membership process here.</a>
+              Ready to join? <Link href="/join">Learn more about the membership process here.</Link>
             </p>
           </Callout>
         </div>
