@@ -1,14 +1,11 @@
 import { useState } from 'preact/hooks'
 import { Link } from 'wouter'
+import logoMark from '../assets/dcac_logo_mark.webp'
 
+/* the club mark, cropped out of the full logo lockup — the lockup's "DCAC"
+   and tagline are dropped here, since the wordmark beside it stays live text */
 const Logo = () => (
-  <svg viewBox="0 0 48 30" width="42" height="26" role="img" aria-label="District of Columbia flag mark">
-    <path d="M12 2 L14.9 8.6 L22 9.2 L16.5 13.9 L18.3 21 L12 17.3 L5.7 21 L7.5 13.9 L2 9.2 L9.1 8.6 Z" transform="translate(3,-1) scale(.42)" fill="#C8102E" />
-    <path d="M12 2 L14.9 8.6 L22 9.2 L16.5 13.9 L18.3 21 L12 17.3 L5.7 21 L7.5 13.9 L2 9.2 L9.1 8.6 Z" transform="translate(18,-1) scale(.42)" fill="#C8102E" />
-    <path d="M12 2 L14.9 8.6 L22 9.2 L16.5 13.9 L18.3 21 L12 17.3 L5.7 21 L7.5 13.9 L2 9.2 L9.1 8.6 Z" transform="translate(33,-1) scale(.42)" fill="#C8102E" />
-    <rect x="2" y="15" width="44" height="5" rx="1" fill="#C8102E" />
-    <rect x="2" y="23" width="44" height="5" rx="1" fill="#C8102E" />
-  </svg>
+  <img className="mark" src={logoMark} alt="" width="55" height="26" />
 )
 
 export function Header() {
