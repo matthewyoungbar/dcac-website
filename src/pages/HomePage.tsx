@@ -3,6 +3,7 @@ import { Link } from 'wouter'
 import { InstagramFeed } from '../components/InstagramFeed.tsx'
 import { SchedulePreview } from '../components/SchedulePreview.tsx'
 import { Tile } from '../components/Tile.tsx'
+import intrasquadPhoto from '../assets/dcac_intrasquad_meet_2026.webp'
 
 export function HomePage() {
   const heroInnerRef = useRef<HTMLDivElement>(null)
@@ -16,7 +17,8 @@ export function HomePage() {
       const y = Math.min(window.scrollY, hero.offsetHeight)
       el.style.transform = `translateY(${y * 0.22}px)`
     }
-    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('scroll', onScroll, {
+      passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
@@ -55,16 +57,21 @@ export function HomePage() {
 
       <main id="main" className="wrap">
         <Link className="feature" href="/trial">
-          <svg className="fstars" width="78" height="34" viewBox="0 0 80 34" aria-hidden="true">
-            <path d="M12 2 L14.9 8.6 L22 9.2 L16.5 13.9 L18.3 21 L12 17.3 L5.7 21 L7.5 13.9 L2 9.2 L9.1 8.6 Z" transform="translate(2,4) scale(.8)" fill="#C8102E" />
-            <path d="M12 2 L14.9 8.6 L22 9.2 L16.5 13.9 L18.3 21 L12 17.3 L5.7 21 L7.5 13.9 L2 9.2 L9.1 8.6 Z" transform="translate(28,4) scale(.8)" fill="#C8102E" />
-            <path d="M12 2 L14.9 8.6 L22 9.2 L16.5 13.9 L18.3 21 L12 17.3 L5.7 21 L7.5 13.9 L2 9.2 L9.1 8.6 Z" transform="translate(54,4) scale(.8)" fill="#C8102E" />
-          </svg>
           <div className="ftext">
+            <svg className="fstars" width="78" height="34" viewBox="0 0 80 34" aria-hidden="true">
+              <path d="M12 2 L14.9 8.6 L22 9.2 L16.5 13.9 L18.3 21 L12 17.3 L5.7 21 L7.5 13.9 L2 9.2 L9.1 8.6 Z" transform="translate(2,4) scale(.8)" fill="#C8102E" />
+              <path d="M12 2 L14.9 8.6 L22 9.2 L16.5 13.9 L18.3 21 L12 17.3 L5.7 21 L7.5 13.9 L2 9.2 L9.1 8.6 Z" transform="translate(28,4) scale(.8)" fill="#C8102E" />
+              <path d="M12 2 L14.9 8.6 L22 9.2 L16.5 13.9 L18.3 21 L12 17.3 L5.7 21 L7.5 13.9 L2 9.2 L9.1 8.6 Z" transform="translate(54,4) scale(.8)" fill="#C8102E" />
+            </svg>
             <p className="tag">New to the team?</p>
             <h2>Start here — your first two swims are free!</h2>
             <p>No experience needed. Just bring a suit, goggles, and yourself. We'll meet you at the wall.</p>
             <span className="btn btn-red" style={{ color: '#fff', display: 'inline-block' }}>Plan your first visit</span>
+          </div>
+          {/* alt="" — the card's own copy already names the destination, so the
+              photo would only pad the link's accessible name */}
+          <div className="fphoto">
+            <img src={intrasquadPhoto} alt="" width="1110" height="740" />
           </div>
         </Link>
 
