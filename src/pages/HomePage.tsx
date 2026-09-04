@@ -104,7 +104,7 @@ export function HomePage() {
           <Tile
             color="purple"
             id="about"
-            href="#"
+            href="/about"
             title="Who we are"
             description="Our story & community"
             icon={

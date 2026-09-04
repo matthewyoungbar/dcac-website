@@ -1,0 +1,39 @@
+.about-lede{font-family:var(--display);font-size:clamp(18px,2.4vw,22px);font-weight:500;line-height:1.35;color:var(--navy);margin-bottom:14px}
+
+/* the "numbers" here are words as often as figures, so they run smaller than
+   the figure-only stats on the competition page */
+.about-numbers .accolade-num{font-size:clamp(26px,3.2vw,32px)}
+
+.about-reasons{display:grid;gap:14px;margin-top:20px}
+.about-reason{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;background:var(--surface);border-radius:var(--radius-lg);padding:24px 26px}
+.about-reason-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center}
+.about-reason-icon svg{width:24px;height:24px}
+.about-reason-icon.t-blue{color:var(--blue-600)}
+.about-reason-icon.t-red{color:var(--red-700)}
+.about-reason-icon.t-purple{color:var(--purple)}
+.about-reason-text h3{font-size:20px;color:var(--navy);margin-bottom:10px}
+.about-reason-text p{color:var(--muted);font-size:16px}
+.about-reason-text p+p{margin-top:12px}
+.about-reason-text a{color:var(--blue-600);font-weight:600}
+
+@media(max-width:760px){
+  .about-reason{grid-template-columns:1fr;gap:14px;padding:22px 22px}
+}
+
+/* long-form prose blocks — the reset strips list markers and paragraph
+   spacing, so both are re-established here rather than globally */
+.about-prose p{color:var(--muted);font-size:16px}
+.about-prose p+p{margin-top:14px}
+.about-prose a{color:var(--blue-600);font-weight:600}
+.about-prose p.about-affirm-lead{margin-top:18px;font-weight:600;color:var(--ink)}
+
+.about-affirm,.about-keypoints{list-style:none;margin-top:12px;display:grid;gap:10px}
+.about-affirm li,.about-keypoints li{position:relative;padding-left:30px;color:var(--muted);font-size:16px}
+.about-affirm li::before{content:'✓';position:absolute;left:6px;top:.18em;color:var(--purple);font-weight:700}
+.about-keypoints li::before{content:'';position:absolute;left:8px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--blue-400)}
+
+.about-sub{font-size:19px;color:var(--navy);margin:30px 0 12px}
+
+.about-photo{margin:0 0 36px}
+.about-photo img{width:100%;height:auto;border-radius:var(--radius-lg)}
+.about-photo figcaption{margin-top:10px;font-size:14px;color:var(--muted)}

@@ -46,10 +46,10 @@ export function Footer() {
         </div>
         <div>
           <h4>The club</h4>
-          <a href="/public#about">About us</a>
+          <Link href="/about">About us</Link>
           <a href="#">Coaches</a>
           <a href="#">Member login</a>
-          <a href="mailto:hello@swimdcac.org">Contact</a>
+          <Link href="/contact">Contact</Link>
         </div>
         <div>
           <h4>Meet our friends</h4>

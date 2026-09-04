@@ -1,0 +1,17 @@
+.contact-details{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.contact-detail{background:var(--blue-50);border-radius:var(--radius);padding:22px 24px}
+.contact-detail-label{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-600);margin-bottom:8px}
+.contact-detail address{font-style:normal;color:var(--blue-800);font-size:16px;line-height:1.5}
+.contact-detail p{color:var(--blue-800);font-size:16px}
+.contact-detail a{color:var(--blue-600);font-weight:600}
+
+.contact-board{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-top:18px}
+.contact-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.contact-avatar{width:100%;aspect-ratio:1/1;height:auto;object-fit:cover;background:var(--blue-50)}
+.contact-avatar-blank{display:grid;place-items:center;color:var(--blue-600);font-family:var(--display);font-size:64px;font-weight:600;letter-spacing:.02em}
+.contact-card-text{padding:18px 20px 20px;min-width:0}
+.contact-role{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-600);margin-bottom:6px}
+.contact-name{display:block;font-family:var(--display);font-size:19px;font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:8px}
+.contact-pronouns{font-family:var(--body);font-size:14px;font-weight:500;color:var(--muted)}
+.contact-email{display:inline-block;font-size:14px;color:var(--blue-600);font-weight:600;word-break:break-word}
+.contact-email:hover{text-decoration:underline}

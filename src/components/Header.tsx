@@ -32,7 +32,7 @@ export function Header() {
             <Link href="/join" onClick={close}>Join</Link>
             <Link href="/schedule" onClick={close}>Schedule</Link>
             <Link href="/competition" onClick={close}>Competition</Link>
-            <a href="/public#about" onClick={close}>About</a>
+            <Link href="/about" onClick={close}>About</Link>
             <Link className="btn btn-red" href="/join" style={{ color: '#fff' }} onClick={close}>Come swim</Link>
           </nav>
         </div>
