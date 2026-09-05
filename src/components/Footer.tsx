@@ -49,6 +49,7 @@ export function Footer() {
           <Link href="/about">About us</Link>
           <a href="#">Coaches</a>
           <a href="#">Member login</a>
+          <Link href="/donate">Donate</Link>
           <Link href="/contact">Contact</Link>
         </div>
         <div>
