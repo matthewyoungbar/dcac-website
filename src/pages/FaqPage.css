@@ -1,0 +1,17 @@
+.faq-photo{margin:0 auto 36px;max-width:620px}
+.faq-photo img{width:100%;height:auto;border-radius:var(--radius-lg)}
+.faq-photo figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
+
+.faq-list{display:grid;gap:10px;margin-top:18px}
+.faq-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+/* the default disclosure triangle is replaced by the chevron below */
+.faq-q{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:18px 22px;font-family:var(--display);font-size:18px;font-weight:600;color:var(--navy)}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q:hover{color:var(--blue-600)}
+.faq-q:focus-visible{outline:2px solid var(--blue-400);outline-offset:-2px}
+.faq-chevron{width:18px;height:18px;color:var(--blue-400);transition:transform .2s}
+.faq-item[open] .faq-chevron{transform:rotate(180deg)}
+.faq-a{padding:0 22px 20px}
+.faq-a p{color:var(--muted);font-size:16px}
+.faq-a p+p{margin-top:12px}
+.faq-a a{color:var(--blue-600);font-weight:600}

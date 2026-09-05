@@ -40,15 +40,16 @@ export function Footer() {
         <div>
           <h4>Get going</h4>
           <Link href="/join">New swimmers</Link>
-          <Link href="/join">How to join</Link>
-          <a href="/public#schedule">Practice times</a>
+          <Link href="/trial">Trial swims</Link>
+          <Link href="/faq">FAQ</Link>
+          <Link href="/schedule">Practice times</Link>
           <Link href="/competition">Competition &amp; events</Link>
         </div>
         <div>
           <h4>The club</h4>
           <Link href="/about">About us</Link>
           <a href="#">Coaches</a>
-          <a href="#">Member login</a>
+          <a href="https://www.clubassistant.com/club/login_form.cfm?c=1344">Member login</a>
           <Link href="/donate">Donate</Link>
           <Link href="/contact">Contact</Link>
         </div>

@@ -1,3 +1,4 @@
+import { Link } from 'wouter'
 import './ContactPage.css'
 import { Callout } from '../components/Callout.tsx'
 import captainPhoto from '../assets/captain.webp'
@@ -65,7 +66,7 @@ export function ContactPage() {
         <section className="meets-section">
           <Callout>
             <p>
-              Prospective new members can also check out our list of frequently asked questions. If you still have more questions, please email{' '}
+              Prospective new members can also check out our <Link href="/faq">list of frequently asked questions</Link>. If you still have more questions, please email{' '}
               <a href="mailto:captain@swimdcac.org">captain@swimdcac.org</a> and{' '}
               <a href="mailto:membership@swimdcac.org">membership@swimdcac.org</a>.
             </p>
