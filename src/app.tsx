@@ -10,6 +10,7 @@ import { AboutPage } from './pages/AboutPage.tsx'
 import { ContactPage } from './pages/ContactPage.tsx'
 import { DonatePage } from './pages/DonatePage.tsx'
 import { FaqPage } from './pages/FaqPage.tsx'
+import { CoachesPage } from './pages/CoachesPage.tsx'
 import './app.css'
 
 // Vite injects the deploy base; wouter wants it without the trailing slash,
@@ -30,6 +31,7 @@ export function App() {
         <Route path="/contact" component={ContactPage} />
         <Route path="/donate" component={DonatePage} />
         <Route path="/faq" component={FaqPage} />
+        <Route path="/coaches" component={CoachesPage} />
       </Switch>
       <Footer />
     </Router>

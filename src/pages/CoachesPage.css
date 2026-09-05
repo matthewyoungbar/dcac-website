@@ -1,0 +1,15 @@
+.coach-list{display:grid;gap:14px;margin-top:18px}
+.coach-card{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;background:var(--surface);border-radius:var(--radius-lg);padding:26px 28px}
+.coach-photo{width:240px;aspect-ratio:4/5;height:auto;object-fit:cover;border-radius:var(--radius);background:var(--blue-50)}
+.coach-name{font-size:20px;color:var(--navy);margin-bottom:8px}
+.coach-pronouns{font-family:var(--body);font-size:14px;font-weight:500;color:var(--muted)}
+.coach-bio{color:var(--muted);font-size:16px}
+
+@media(max-width:860px){
+  .coach-card{gap:20px;padding:22px}
+  .coach-photo{width:180px}
+}
+@media(max-width:560px){
+  .coach-card{grid-template-columns:1fr}
+  .coach-photo{width:100%;max-width:320px}
+}

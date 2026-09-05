@@ -125,7 +125,7 @@ const faqs: Faq[] = [
     q: 'Who are the coaches?',
     a: (
       <p>
-        We have a great team of coaches who will help you achieve your goals. See our coaches page.
+        We have a great team of coaches who will help you achieve your goals. See our <Link href="/coaches">coaches</Link> page.
       </p>
     ),
   },

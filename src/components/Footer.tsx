@@ -48,7 +48,7 @@ export function Footer() {
         <div>
           <h4>The club</h4>
           <Link href="/about">About us</Link>
-          <a href="#">Coaches</a>
+          <Link href="/coaches">Coaches</Link>
           <a href="https://www.clubassistant.com/club/login_form.cfm?c=1344">Member login</a>
           <Link href="/donate">Donate</Link>
           <Link href="/contact">Contact</Link>
