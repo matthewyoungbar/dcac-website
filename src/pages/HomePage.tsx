@@ -64,7 +64,7 @@ export function HomePage() {
               <path d="M12 2 L14.9 8.6 L22 9.2 L16.5 13.9 L18.3 21 L12 17.3 L5.7 21 L7.5 13.9 L2 9.2 L9.1 8.6 Z" transform="translate(54,4) scale(.8)" fill="#C8102E" />
             </svg>
             <p className="tag">New to the team?</p>
-            <h2>Start here — your first two swims are free!</h2>
+            <h2>Your first two swims are free!</h2>
             <p>No experience needed. Just bring a suit, goggles, and yourself. We'll meet you at the wall.</p>
             <span className="btn btn-red" style={{ color: '#fff', display: 'inline-block' }}>Plan your first visit</span>
           </div>

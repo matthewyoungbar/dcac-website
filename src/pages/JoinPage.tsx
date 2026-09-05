@@ -82,15 +82,6 @@ export function JoinPage() {
           </div>
         </section>
 
-        <section className="meets-section">
-          <h2 className="section-title">Scholarships</h2>
-          <Callout tone="purple">
-            <p>
-              DCAC is committed to helping swimmers who face financial challenges. If you have a financial hardship and would be unable to participate at the regular dues rates above, please contact the Treasurer (<a href="mailto:treasurer@swimdcac.org">treasurer@swimdcac.org</a>) about reductions in dues based on financial hardship, or if you're interested in the Under 30 Award. Pool dues may be reduced on an individual basis at the discretion of the Board. See our scholarship tab on the website.
-            </p>
-          </Callout>
-        </section>
-
         <div style={{ marginBottom: '40px' }}>
           <Callout tone="neutral">
             <p>
@@ -100,12 +91,21 @@ export function JoinPage() {
         </div>
 
         <section className="meets-section">
+          <h2 className="section-title">Scholarships</h2>
+          <Callout tone="purple">
+            <p>
+              DCAC is committed to helping swimmers who face financial challenges. If you have a financial hardship and would be unable to participate at the regular dues rates above, please contact the Treasurer (<a href="mailto:treasurer@swimdcac.org">treasurer@swimdcac.org</a>) about reductions in dues based on financial hardship, or if you're interested in the Under 30 Award. Pool dues may be reduced on an individual basis at the discretion of the Board. See our scholarship tab on the website.
+            </p>
+          </Callout>
+        </section>
+
+        <section className="meets-section">
           <h2 className="section-title">USMS Visitors</h2>
 
           <Steps>
             <Step number={1} title="Show up and introduce yourself">
               <p className="step-body">
-                DCAC welcomes visitors from other USMS teams. Just show up at any workout and introduce yourself to the coach. Visitors must show their USMS card — no exceptions. <a href="#">Retrieve your USMS card here.</a> Visitors are welcome for one free swim per quarter. If you wish to swim multiple times, the fee is $15 per workout, payable by Venmo at @swimdcac.
+                DCAC welcomes visitors from other USMS teams. Just show up at any workout and introduce yourself to the coach. Visitors must show their USMS card — no exceptions. <a href="https://www.usms.org/reg/getcard.php">Retrieve your USMS card here.</a> Visitors are welcome for one free swim per quarter. If you wish to swim multiple times, the fee is $15 per workout, payable by Venmo at @swimdcac.
               </p>
             </Step>
 
