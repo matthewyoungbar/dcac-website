@@ -60,6 +60,12 @@ export function ContactPage() {
               <span className="contact-detail-label">Phone</span>
               <p><a href="tel:+12026153931">202-615-3931</a></p>
             </div>
+            <div className="contact-detail">
+              <span className="contact-detail-label">Instagram</span>
+              <p>
+                <a href="https://instagram.com/swimdcac/" target="_blank" rel="noopener noreferrer">@swimdcac</a>
+              </p>
+            </div>
           </div>
         </section>
 

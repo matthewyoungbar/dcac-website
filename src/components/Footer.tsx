@@ -17,19 +17,19 @@ export function Footer() {
         <div>
           <p className="lede">DC's premiere Master's swim team since 1986.</p>
           <div className="social">
-            <a href="#" aria-label="Instagram">
+            <a href="https://instagram.com/swimdcac/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="3" width="18" height="18" rx="5" />
                 <circle cx="12" cy="12" r="4" />
                 <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
               </svg>
             </a>
-            <a href="#" aria-label="Facebook">
+            <a href="https://facebook.com/DCAquaticsClub/" aria-label="Facebook">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z" />
               </svg>
             </a>
-            <a href="mailto:hello@swimdcac.org" aria-label="Email">
+            <a href="mailto:membership@swimdcac.org" aria-label="Email">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="5" width="18" height="14" rx="2" />
                 <path d="M3 7l9 6 9-6" />
