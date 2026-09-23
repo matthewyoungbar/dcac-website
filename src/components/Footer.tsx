@@ -44,6 +44,7 @@ export function Footer() {
           <Link href="/faq">FAQ</Link>
           <Link href="/schedule">Practice times</Link>
           <Link href="/competition">Competition &amp; events</Link>
+          <Link href="/records">Team records</Link>
         </div>
         <div>
           <h4>The club</h4>

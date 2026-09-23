@@ -1,0 +1,113 @@
+/* Stroke colors. Each pair is a readable ink on its own tint (all clear 5.4:1),
+   set on the row so the event cell, the year and the phone card's edge all
+   pick it up. Relays take the color of their legs. */
+.ev-free{--ev:#185FA5;--ev-bg:#E6F1FB}
+.ev-back{--ev:#0F6B55;--ev-bg:#E0F3EC}
+.ev-breast{--ev:#4C6B22;--ev-bg:#EDF6E1}
+.ev-fly{--ev:#8A5510;--ev-bg:#FBEFDC}
+.ev-im{--ev:#3C3489;--ev-bg:#EEEDFE}
+.ev-medley{--ev:#A32D2D;--ev-bg:#FCEBEB}
+
+/* The pride hairline's six hues, cycled across age groups: a chip and the
+   section it jumps to carry the same rail color. Decorative only — never text. */
+.hue-0{--rail:#E24B4A}
+.hue-1{--rail:#EF9F27}
+.hue-2{--rail:#97C459}
+.hue-3{--rail:#1D9E75}
+.hue-4{--rail:#378ADD}
+.hue-5{--rail:#7F77DD}
+
+/* controls */
+.rec-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.rec-seg{display:inline-flex;gap:2px;background:var(--surface);border-radius:12px;padding:4px}
+.rec-seg-btn{font-family:var(--body);font-size:14.5px;font-weight:600;color:var(--muted);background:none;border:none;
+  cursor:pointer;padding:8px 16px;border-radius:9px;transition:background .18s,color .18s}
+.rec-seg-btn:hover{color:var(--navy)}
+.rec-seg-btn.on{background:#fff;color:var(--blue-800);box-shadow:0 1px 3px rgba(4,44,83,.14)}
+
+.rec-search{position:relative;display:flex;align-items:center;flex:1;min-width:190px}
+.rec-search svg{position:absolute;left:13px;width:17px;height:17px;color:var(--muted);pointer-events:none}
+.rec-search input{width:100%;font-family:var(--body);font-size:15px;color:var(--ink);background:var(--surface);
+  border:1.5px solid transparent;border-radius:12px;padding:11px 14px 11px 38px}
+.rec-search input::placeholder{color:var(--muted)}
+.rec-search input:focus{outline:none;border-color:var(--blue-200);background:#fff}
+
+.rec-seg-btn:focus-visible,.rec-ages .chip:focus-visible{outline:2px solid var(--blue-400);outline-offset:2px}
+
+.rec-course-note{font-size:14px;color:var(--muted);margin-top:12px}
+
+.rec-ages{margin-top:16px}
+.rec-ages .chip{display:inline-flex;align-items:center;gap:7px;border:none;cursor:pointer;font-family:var(--body)}
+.rec-ages .chip:hover{filter:brightness(.97)}
+.rec-dot{width:8px;height:8px;border-radius:50%;background:var(--rail,var(--blue-400));flex:none}
+.rec-dot-all{background:conic-gradient(from .25turn,#E24B4A,#EF9F27,#97C459,#1D9E75,#378ADD,#7F77DD,#E24B4A)}
+
+.rec-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:26px 0 14px}
+.rec-count{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--blue-600)}
+/* the legend is the key to the row colors, and doubles as the page's stripe */
+.rec-legend{display:flex;flex-wrap:wrap;gap:7px}
+.rec-key{background:var(--ev-bg);color:var(--ev);font-size:11px;font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;border-radius:999px;padding:5px 12px}
+
+.rec-msg{background:var(--surface);border-radius:var(--radius-lg);padding:24px 28px;margin-top:24px}
+.rec-msg p{color:var(--muted);font-size:16px}
+.rec-msg a{color:var(--blue-600);font-weight:600}
+
+/* groups */
+.rec-group{margin-bottom:30px}
+.rec-group-title{display:flex;align-items:center;gap:10px;font-size:20px;color:var(--navy);margin-bottom:8px}
+.rec-group-title::before{content:'';width:5px;height:22px;border-radius:3px;background:var(--rail,var(--blue-400));flex:none}
+.rec-group-tag{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--purple-800);background:var(--purple-50);border-radius:999px;padding:4px 10px}
+
+/* the tinted event column is the spine the two sides mirror around */
+.rec-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.rec-table th,.rec-table td{padding:11px 14px;vertical-align:middle}
+.rec-table thead th{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--muted);padding-bottom:4px}
+.rec-table tbody tr+tr{border-top:1px solid var(--line)}
+.rec-table tbody tr{transition:background .16s}
+.rec-table tbody tr:hover{background:var(--ev-bg)}
+
+.rec-men-col{width:36%;text-align:right}
+.rec-event-col{width:28%;text-align:center}
+.rec-table.solo .rec-event-col{width:34%;text-align:left}
+
+.rec-event{background:var(--ev-bg);font-family:var(--body);font-weight:600;font-size:14.5px;color:var(--ev);text-align:center}
+.rec-table.solo .rec-event{text-align:left}
+
+.rec-right{text-align:right}
+.rec-left{text-align:left}
+.rec-time{display:block;font-family:var(--display);font-weight:600;font-size:17px;color:var(--navy);line-height:1.2}
+.rec-who{display:block;font-size:13.5px;color:var(--muted);margin-top:3px}
+.rec-year{color:var(--ev);font-weight:600;white-space:nowrap}
+.rec-dash{color:var(--ev);opacity:.35}
+/* the side is clear from the column here; the labels are for the stacked view */
+.rec-tag{display:none}
+
+/* loading */
+.rec-skel{display:block;border-radius:10px;background:var(--surface);animation:skel 1.4s ease-in-out infinite}
+.rec-skel-title{width:130px;height:24px;margin-bottom:16px}
+.rec-skel-row{height:52px;margin-bottom:8px}
+
+@media(max-width:760px){
+  /* a three-column ledger doesn't survive a phone — each record becomes a card
+     with the event on top and the two sides labelled underneath */
+  .rec-table,.rec-table tbody{display:block}
+  .rec-table thead{display:none}
+  .rec-table tr{display:flex;flex-direction:column;background:var(--ev-bg);border-radius:var(--radius);
+    border-left:4px solid var(--ev);padding:14px 16px;margin-bottom:10px}
+  .rec-table tbody tr+tr{border-top:none}
+  .rec-table th,.rec-table td{display:block;padding:0;text-align:left}
+
+  .rec-event,.rec-table.solo .rec-event{order:-1;background:none;font-family:var(--display);font-size:16px;color:var(--ev)}
+
+  .rec-side{display:grid;grid-template-columns:58px 1fr;column-gap:10px;padding-top:10px}
+  .rec-tag{display:block;grid-column:1;grid-row:1;font-size:10.5px;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--ev);line-height:1.6}
+  .rec-time{grid-column:2;grid-row:1}
+  .rec-who{grid-column:2;grid-row:2;margin-top:1px}
+  .rec-open .rec-tag{opacity:.45}
+}
+
+.rec-disclaimer{margin-top:34px}

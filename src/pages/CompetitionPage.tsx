@@ -1,3 +1,4 @@
+import { Link } from 'wouter'
 import { Callout } from '../components/Callout.tsx'
 import { Tile } from '../components/Tile.tsx'
 import './CompetitionPage.css'
@@ -170,12 +171,10 @@ export function CompetitionPage() {
               </svg>
               Team records
             </span>
-            <a href="https://www.swimdcac.org/page.cfm?pagetitle=Team+Records" target="_blank" rel="noopener noreferrer">
-              View all records →
-            </a>
+            <Link href="/records">View all records →</Link>
           </div>
           <p style={{ color: 'var(--muted)', fontSize: '15px' }}>
-            DCAC individual and relay records in SCM, LCM, and SCY — maintained on the team website.
+            DCAC records individual and relay records in SCY, SCM, and LCM for every USMS age group.
           </p>
         </div>
 
