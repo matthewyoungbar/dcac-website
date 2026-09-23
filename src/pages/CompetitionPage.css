@@ -1,0 +1,22 @@
+/* IGLA+ explainer — same shell as .meets-cta-card, with room for a heading */
+.igla-panel{background:var(--blue-50);border-radius:var(--radius-lg);padding:28px 32px;margin-top:16px}
+.igla-panel h3{font-size:20px;color:var(--navy);margin-bottom:10px}
+.igla-panel p{color:var(--blue-800);font-size:16px;max-width:640px}
+.igla-panel p+p{margin-top:12px}
+
+/* the reset strips list markers, so the bullets are drawn back in */
+.scholarship-reqs{list-style:none;margin-top:12px;display:grid;gap:10px}
+.scholarship-reqs li{position:relative;padding-left:30px;color:var(--muted);font-size:16px}
+.scholarship-reqs li::before{content:'';position:absolute;left:8px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--blue-400)}
+.scholarship-lead{margin-top:16px;font-weight:600;color:var(--ink)}
+
+@media(max-width:760px){
+  .igla-panel{padding:24px 22px}
+}
+
+/* the record tiles are statements, not links — drop the lift that signals
+   "clickable" on the navigational tiles elsewhere, and top-align the icon so
+   it stays put when a title wraps to two lines */
+.record-tiles .tile{align-items:flex-start}
+.record-tiles .tile:hover{transform:none;box-shadow:none}
+.record-tiles .ic{margin-top:2px}

@@ -1,8 +1,52 @@
+import { Callout } from '../components/Callout.tsx'
 import { Tile } from '../components/Tile.tsx'
+import './CompetitionPage.css'
 
-const cities = [
-  'Paris', 'Honolulu', 'Montreal', 'Stockholm', 'New York City',
-  'Cologne', 'Miami', 'Reykjavik', 'Melbourne', 'Seattle', 'San Francisco', 'Sydney',
+const records = [
+  {
+    color: 'blue' as const,
+    title: '11× IGLA World Champions',
+    description: 'Including 2001, 2003–2005, 2008, 2011 & 2013',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M7 4h10v5a5 5 0 0 1-10 0V4z" />
+        <path d="M7 6H4v1.5A3.5 3.5 0 0 0 7.5 11M17 6h3v1.5a3.5 3.5 0 0 1-3.5 3.5" />
+        <path d="M12 14v4M9.5 21h5M10.5 18h3" />
+      </svg>
+    ),
+  },
+  {
+    color: 'red' as const,
+    title: '2000 USMS National Championships',
+    description: "Men's Champions & Combined Runner Up",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 21v-6h5v6M9.5 21V9h5v12M15 21v-8h5v8M2.5 21h19" />
+      </svg>
+    ),
+  },
+  {
+    color: 'purple' as const,
+    title: 'USMS All Americans & record holders',
+    description: 'Multiple DCAC swimmers',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="8.5" r="5.5" />
+        <path d="M8.5 13.2 7 21l5-2.6 5 2.6-1.5-7.8" />
+      </svg>
+    ),
+  },
+  {
+    color: 'deep' as const,
+    title: 'IGLA World record holders',
+    description: 'Multiple DCAC swimmers',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="13.5" r="7.5" />
+        <path d="M12 10v3.5l2.5 1.5M9.5 2h5M19 5.5 20.5 7" />
+      </svg>
+    ),
+  },
 ]
 
 export function CompetitionPage() {
@@ -32,39 +76,59 @@ export function CompetitionPage() {
         </section>
 
         <section className="meets-section">
-          <h2 className="section-title">The big stage</h2>
+          <h2 className="section-title">IGLA+</h2>
           <p className="section-body">
-            DCAC's marquee event each year is either the <strong>International Gay &amp; Lesbian Aquatics (IGLA) World Championships</strong> or the <strong>Gay Games</strong>. We've competed — and won — in cities around the world:
+            DCAC's marquee event each year is either the <strong>IGLA+ World Championships</strong> or the <strong>Gay Games</strong>. We've been travelling to them — and winning at them — for three decades, and we proudly hosted the championships in <strong>1996</strong>, <strong>2008</strong>, and again in <strong>2025</strong> here in Washington, DC.
           </p>
-          <div className="chips" style={{ marginTop: '16px' }}>
-            {cities.map(city => <span key={city} className="chip b">{city}</span>)}
+
+          <div className="igla-panel">
+            <h3>What is IGLA+?</h3>
+            <p>
+              IGLA+ is the <strong>International Group of LGBTQIA+ Aquatics</strong>, previously known as International Gay &amp; Lesbian Aquatics. It is the world's foremost organization devoted to swimming, water polo, diving, and artistic swimming within the LGBTQIA+ community and amongst its allies, with more than 100 member clubs across six continents. DCAC is one of them.
+            </p>
+            <p>
+              IGLA+'s annual championship competition draw athletes from more than 30 countries. The meet closes with the <strong>Pink Flamingo</strong>, which you'll just have to see to understand.
+            </p>
+            <p style={{ marginTop: '18px' }}>
+              <a href="https://www.igla.org" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--blue-600)', fontWeight: 600 }}>
+                More at igla.org →
+              </a>
+            </p>
           </div>
-          <p className="section-note">DCAC proudly hosted IGLA in <strong>1996</strong>, <strong>2008</strong>, and <strong>2025</strong>.</p>
+        </section>
+
+        <section className="meets-section">
+          <h2 className="section-title">IGLA scholarships</h2>
+          <p className="section-body">
+            DCAC will award an undetermined number of scholarships to DCAC swimmers to aid in offsetting expenses for swimmers competing in the annual IGLA+ Championship.
+          </p>
+          <p className="section-body scholarship-lead">Award recipients are required to:</p>
+          <ul className="scholarship-reqs">
+            <li>Compete in the maximum allowable number of individual and relay events</li>
+            <li>Take part in the Pink Flamingo performance at the meet</li>
+            <li>Actively participate in DCAC fundraising and volunteer events</li>
+          </ul>
+          <div style={{ marginTop: '18px' }}>
+            <Callout>
+              <p>
+                If interested, please request an application from <a href="mailto:treasurer@swimdcac.org">treasurer@swimdcac.org</a>.
+              </p>
+            </Callout>
+          </div>
         </section>
 
         <section className="meets-section">
           <h2 className="section-title">Our record</h2>
-          <div className="accolades-grid">
-            <div className="accolade t-blue">
-              <span className="accolade-num">11×</span>
-              <span className="accolade-label">IGLA World Champions</span>
-              <span className="accolade-detail">2001, 2003–2005, 2008, 2011 &amp; 2013</span>
-            </div>
-            <div className="accolade t-red">
-              <span className="accolade-num">2000</span>
-              <span className="accolade-label">USMS National Champions</span>
-              <span className="accolade-detail">Men's Champions &amp; Combined Runner Up</span>
-            </div>
-            <div className="accolade t-purple">
-              <span className="accolade-num">38</span>
-              <span className="accolade-label">USMS Top Ten times in 2020</span>
-              <span className="accolade-detail">22 swimmers earned All American status</span>
-            </div>
-            <div className="accolade t-deep">
-              <span className="accolade-num">∞</span>
-              <span className="accolade-label">IGLA World Records</span>
-              <span className="accolade-detail">Individual &amp; relay records across age groups</span>
-            </div>
+          <div className="tiles record-tiles">
+            {records.map(r => (
+              <Tile
+                key={r.title}
+                color={r.color}
+                title={r.title}
+                description={r.description}
+                icon={r.icon}
+              />
+            ))}
           </div>
         </section>
 
