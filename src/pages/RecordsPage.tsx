@@ -39,6 +39,9 @@ const STROKES = [
 /** Age groups cycle the pride hues, so a chip and its section rail match. */
 const HUES = 6
 
+/** Records from the current calendar year get a highlight; it rolls over on its own each January. */
+const THIS_YEAR = String(new Date().getFullYear())
+
 const hit = (swim: Swim | null, q: string) =>
   !!swim && swim.names.some(n => n.toLowerCase().includes(q))
 
@@ -281,8 +284,9 @@ function Row({ line, mixed }: { line: RecordLine; mixed: boolean }) {
 }
 
 function SwimCell({ swim, side, label }: { swim: Swim | null; side: 'left' | 'right'; label: string }) {
+  const fresh = swim?.year === THIS_YEAR
   return (
-    <td className={`rec-side rec-${side}${swim ? '' : ' rec-open'}`}>
+    <td className={`rec-side rec-${side}${swim ? '' : ' rec-open'}${fresh ? ' rec-fresh' : ''}`}>
       {/* the side is obvious from the column on a wide screen; once the rows
           stack on a phone, each entry has to say which side it is */}
       <span className="rec-tag">{label}</span>
@@ -291,7 +295,9 @@ function SwimCell({ swim, side, label }: { swim: Swim | null; side: 'left' | 'ri
           <span className="rec-time">{swim.time}</span>
           <span className="rec-who">
             {swim.names.join(' · ')}
-            {swim.year && <span className="rec-year"> · {swim.year}</span>}
+            {swim.year && (fresh
+              ? <> <span className="rec-year rec-year-new">{swim.year}<span className="rec-sr"> — set this year</span></span></>
+              : <span className="rec-year"> · {swim.year}</span>)}
           </span>
         </>
       ) : (

@@ -82,6 +82,12 @@
 .rec-who{display:block;font-size:13.5px;color:var(--muted);margin-top:3px}
 .rec-year{color:var(--ev);font-weight:600;white-space:nowrap}
 .rec-dash{color:var(--ev);opacity:.35}
+/* records set this calendar year: a faint wash of the row's stroke color, and
+   the year turns into a solid pill so it still reads without the tint */
+.rec-fresh{background:color-mix(in srgb,var(--ev-bg) 70%,transparent)}
+.rec-year-new{display:inline-block;background:var(--ev);color:#fff;font-size:11.5px;letter-spacing:.02em;
+  border-radius:999px;padding:1px 8px;margin-left:2px;line-height:1.5;vertical-align:1px}
+.rec-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 /* the side is clear from the column here; the labels are for the stacked view */
 .rec-tag{display:none}
 

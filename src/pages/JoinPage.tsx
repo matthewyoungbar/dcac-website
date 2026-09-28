@@ -1,6 +1,7 @@
 import { Link } from 'wouter'
 import { Callout } from '../components/Callout.tsx'
 import { Step, Steps } from '../components/Step.tsx'
+import practicePhoto from '../assets/oxon_run_practice.webp'
 import './JoinPage.css'
 
 const duesOptions = [
@@ -31,6 +32,17 @@ export function JoinPage() {
             </p>
           </Callout>
         </div>
+
+        <figure className="join-photo">
+          <img
+            src={practicePhoto}
+            alt="About thirty DCAC swimmers in caps and goggles gathered in the shallow end of an outdoor pool."
+            width="1110"
+            height="740"
+            loading="lazy"
+          />
+          <figcaption>Practice at Oxon Run Pool.</figcaption>
+        </figure>
 
         <section className="meets-section">
           <h2 className="section-title">When you're ready to become a member</h2>
