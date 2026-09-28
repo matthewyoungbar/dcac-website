@@ -1,5 +1,5 @@
 import { Link } from 'wouter'
-import logoWhite from '../assets/dcac_logo_white.svg'
+import logoWhite from '../assets/logos/dcac_logo_white.svg'
 
 const Logo = () => (
   <img className="logo" src={logoWhite} alt="" width="57" height="28" />

@@ -7,6 +7,14 @@
 .ev-fly{--ev:#8A5510;--ev-bg:#FBEFDC}
 .ev-im{--ev:#3C3489;--ev-bg:#EEEDFE}
 .ev-medley{--ev:#A32D2D;--ev-bg:#FCEBEB}
+@media(prefers-color-scheme:dark){
+  .ev-free{--ev:#85B7EB;--ev-bg:#13263D}
+  .ev-back{--ev:#7FD3B6;--ev-bg:#0F2A26}
+  .ev-breast{--ev:#B5D98A;--ev-bg:#1D2A14}
+  .ev-fly{--ev:#EDBE7A;--ev-bg:#2E2213}
+  .ev-im{--ev:#ABA5F0;--ev-bg:#221F46}
+  .ev-medley{--ev:#F4A0A0;--ev-bg:#3A1A22}
+}
 
 /* The pride hairline's six hues, cycled across age groups: a chip and the
    section it jumps to carry the same rail color. Decorative only — never text. */
@@ -23,14 +31,14 @@
 .rec-seg-btn{font-family:var(--body);font-size:14.5px;font-weight:600;color:var(--muted);background:none;border:none;
   cursor:pointer;padding:8px 16px;border-radius:9px;transition:background .18s,color .18s}
 .rec-seg-btn:hover{color:var(--navy)}
-.rec-seg-btn.on{background:#fff;color:var(--blue-800);box-shadow:0 1px 3px rgba(4,44,83,.14)}
+.rec-seg-btn.on{background:var(--card);color:var(--blue-800);box-shadow:0 1px 3px rgba(4,44,83,.14)}
 
 .rec-search{position:relative;display:flex;align-items:center;flex:1;min-width:190px}
 .rec-search svg{position:absolute;left:13px;width:17px;height:17px;color:var(--muted);pointer-events:none}
 .rec-search input{width:100%;font-family:var(--body);font-size:15px;color:var(--ink);background:var(--surface);
   border:1.5px solid transparent;border-radius:12px;padding:11px 14px 11px 38px}
 .rec-search input::placeholder{color:var(--muted)}
-.rec-search input:focus{outline:none;border-color:var(--blue-200);background:#fff}
+.rec-search input:focus{outline:none;border-color:var(--blue-200);background:var(--card)}
 
 .rec-seg-btn:focus-visible,.rec-ages .chip:focus-visible{outline:2px solid var(--blue-400);outline-offset:2px}
 
@@ -85,7 +93,7 @@
 /* records set this calendar year: a faint wash of the row's stroke color, and
    the year turns into a solid pill so it still reads without the tint */
 .rec-fresh{background:color-mix(in srgb,var(--ev-bg) 70%,transparent)}
-.rec-year-new{display:inline-block;background:var(--ev);color:#fff;font-size:11.5px;letter-spacing:.02em;
+.rec-year-new{display:inline-block;background:var(--ev);color:var(--bg);font-size:11.5px;letter-spacing:.02em;
   border-radius:999px;padding:1px 8px;margin-left:2px;line-height:1.5;vertical-align:1px}
 .rec-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 /* the side is clear from the column here; the labels are for the stacked view */

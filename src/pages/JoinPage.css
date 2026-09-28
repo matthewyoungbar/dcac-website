@@ -3,7 +3,7 @@
 .join-photo figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
 
 .join-dues-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
-.join-dues-option{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.join-dues-option{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
 .join-dues-option .amt{display:block;font-family:var(--display);font-size:19px;font-weight:600;color:var(--navy);margin-bottom:6px}
 .join-dues-option p{font-size:13.5px;color:var(--muted)}
 

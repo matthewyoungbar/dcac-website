@@ -1,7 +1,7 @@
 import { Link } from 'wouter'
 import { Callout } from '../components/Callout.tsx'
 import { Step, Steps } from '../components/Step.tsx'
-import practicePhoto from '../assets/oxon_run_practice.webp'
+import practicePhoto from '../assets/pictures/oxon_run_practice.webp'
 import './JoinPage.css'
 
 const duesOptions = [

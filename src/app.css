@@ -7,18 +7,42 @@
   --ink:#0E2238; --muted:#5B6B7C;
   --surface:#F3F7FC; --white:#fff;
   --line:rgba(4,44,83,.10);
+  /* role colors — these are what dark mode swaps. --navy is the heading ink;
+     --navy-bg is the brand band (hero, footer), which stays navy in both. */
+  --bg:#fff; --card:#fff; --navy-bg:#042C53;
   --radius:14px; --radius-lg:20px;
   --display:'Bricolage Grotesque',Georgia,serif;
   --body:'Hanken Grotesk',-apple-system,sans-serif;
+  color-scheme:light dark;
+}
+
+/* Dark mode follows the visitor's system setting. The scale flips: tints that
+   sit behind text go deep, and the inks that sit on them go light, so every
+   "text on tint" pairing keeps its contrast without touching the components. */
+@media(prefers-color-scheme:dark){
+  :root{
+    --navy:#E4EEF9;
+    --blue-800:#B5D4F4; --blue-600:#85B7EB; --blue-400:#4F9BE6;
+    --blue-200:#35577D; --blue-100:#1E3A5C; --blue-50:#13263D;
+    --red:#E23A52; --red-700:#F4A0A0; --red-900:#FBD0D0; --red-50:#3A1A22;
+    --purple:#ABA5F0; --purple-800:#CECBF6; --purple-50:#221F46;
+    --ink:#E3EAF2; --muted:#9AABBD;
+    --surface:#112034;
+    --line:rgba(181,212,244,.13);
+    --bg:#0A1522; --card:#16283F; --navy-bg:#062340;
+  }
+  /* the hero, page heroes and footer were already dark, so they keep the
+     light-mode inks they were designed with */
+  .hero,.page-hero,footer{--blue-200:#85B7EB;--blue-100:#B5D4F4}
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.12;letter-spacing:-.01em}
 a{color:inherit;text-decoration:none}
 img,svg{display:block}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;z-index:200}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy-bg);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;z-index:200}
 .skip:focus{left:0}
 
 /* pride hairline */
@@ -29,7 +53,7 @@ img,svg{display:block}
 .pride :nth-child(5){background:#378ADD}.pride :nth-child(6){background:#7F77DD}
 
 /* header */
-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
 .brand{display:flex;align-items:center;gap:11px}
 .brand .logo{height:44px;width:auto}
@@ -44,7 +68,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdr
 .menu-btn{display:none;background:none;border:none;color:var(--navy);font-size:26px;cursor:pointer;line-height:1}
 
 /* hero */
-.hero{position:relative;background:var(--navy);overflow:hidden}
+.hero{position:relative;background:var(--navy-bg);overflow:hidden}
 .hero .stars{position:absolute;inset:0;pointer-events:none}
 .hero .stars svg{position:absolute}
 .star-bob{animation:bob 7s ease-in-out infinite}
@@ -58,6 +82,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdr
 .hero .cta{display:flex;gap:13px;flex-wrap:wrap}
 .waves{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:96px;display:block}
 .waves path{will-change:transform}
+.waves .shore{fill:var(--bg)}
 .w1{animation:drift 14s linear infinite}
 .w2{animation:drift 20s linear infinite reverse}
 .w3{animation:drift 26s linear infinite}
@@ -106,7 +131,7 @@ body.modal-open{overflow:hidden}
 .reach a{color:var(--blue-600);font-weight:600}
 
 /* footer */
-footer{margin-top:48px;background:var(--navy);color:#fff}
+footer{margin-top:48px;background:var(--navy-bg);color:#fff}
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-block:54px 34px}
 .foot h4{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-200);margin-bottom:14px}
 .foot a,.foot p{color:var(--blue-100);font-size:15px;display:block;margin-bottom:9px}
@@ -133,7 +158,7 @@ footer{margin-top:48px;background:var(--navy);color:#fff}
 .insta-badge{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.45);color:#fff;border-radius:6px;padding:4px 6px;display:flex;align-items:center;justify-content:center}
 
 /* page hero (inner pages) */
-.page-hero{background:var(--navy);padding:54px 0;position:relative;overflow:hidden}
+.page-hero{background:var(--navy-bg);padding:54px 0;position:relative;overflow:hidden}
 .page-hero-inner{max-width:580px;padding:10px 0}
 .page-hero h1{font-size:clamp(32px,5vw,52px);color:#fff;margin-bottom:12px;font-weight:600}
 .page-hero .sub{font-size:clamp(16px,2vw,18px);color:var(--blue-100)}
@@ -164,7 +189,7 @@ footer{margin-top:48px;background:var(--navy);color:#fff}
   .feature{grid-template-columns:1fr;min-height:0}
   .feature .ftext{padding:26px 24px}
   .feature .fphoto{aspect-ratio:16/9}
-  .links{position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;display:none}
+  .links{position:absolute;top:68px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;display:none}
   .links.open{display:flex}
   .links a{padding:13px 24px}
   .links .btn{margin:8px 24px}

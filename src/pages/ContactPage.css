@@ -6,7 +6,7 @@
 .contact-detail a{color:var(--blue-600);font-weight:600}
 
 .contact-board{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-top:18px}
-.contact-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.contact-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 .contact-avatar{width:100%;aspect-ratio:1/1;height:auto;object-fit:cover;background:var(--blue-50)}
 .contact-avatar-blank{display:grid;place-items:center;color:var(--blue-600);font-family:var(--display);font-size:64px;font-weight:600;letter-spacing:.02em}
 .contact-card-text{padding:18px 20px 20px;min-width:0}

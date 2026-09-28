@@ -14,6 +14,9 @@
 .th-rainbow .th-dot{background:conic-gradient(from .25turn,#E24B4A,#EF9F27,#97C459,#1D9E75,#378ADD,#7F77DD,#E24B4A)}
 .th-rainbow .th-label{background:linear-gradient(90deg,#D8433F,#D98A1E,#4E9E3E,#1D9E75,#2F7ED0,#7F77DD);
   -webkit-background-clip:text;background-clip:text;color:transparent}
+@media(prefers-color-scheme:dark){
+  .th-rainbow .th-label{background-image:linear-gradient(90deg,#F07372,#F2B354,#A9D16F,#3DBE93,#5BA3EA,#9E97EA)}
+}
 
 .th-pill{background:var(--th-bg);border-radius:999px;padding:5px 11px 5px 9px;gap:6px}
 .th-pill .th-label{font-size:11.5px}

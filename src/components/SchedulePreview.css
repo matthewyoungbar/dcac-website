@@ -2,7 +2,7 @@
 .sched-msg{font-size:14px;color:var(--muted)}
 
 .week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;list-style:none}
-.day{display:flex;flex-direction:column;gap:7px;min-height:112px;padding:10px 11px 12px;background:var(--white);border:1px solid var(--line);border-radius:12px}
+.day{display:flex;flex-direction:column;gap:7px;min-height:112px;padding:10px 11px 12px;background:var(--card);border:1px solid var(--line);border-radius:12px}
 .day.rest{background:transparent;border-style:dashed}
 .day.today{border-color:var(--blue-400);box-shadow:0 0 0 1px var(--blue-400),0 6px 16px rgba(4,44,83,.08)}
 .day-head{display:flex;align-items:baseline;justify-content:space-between;gap:6px}

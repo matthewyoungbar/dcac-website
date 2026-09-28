@@ -5,7 +5,7 @@
 
 /* small pill button, shared by the subscribe row and the modal's add-to actions */
 .mini{font-family:var(--body);font-size:13px;font-weight:600;line-height:1;cursor:pointer;
-  background:var(--white);color:var(--blue-800);border:1px solid var(--blue-200);
+  background:var(--card);color:var(--blue-800);border:1px solid var(--blue-200);
   border-radius:8px;padding:8px 12px;transition:background .18s,border-color .18s}
 .mini:hover{background:var(--blue-50);border-color:var(--blue-400)}
 .mini:focus-visible{outline:2px solid var(--blue-400);outline-offset:2px}
@@ -14,7 +14,7 @@
 .cal-bar{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
 .cal-title{font-family:var(--display);font-size:clamp(20px,2.8vw,26px);font-weight:600;color:var(--navy);min-width:190px}
 .cal-nav{font-family:var(--body);font-size:22px;line-height:1;cursor:pointer;color:var(--blue-800);
-  background:var(--white);border:1px solid var(--blue-200);border-radius:10px;width:38px;height:38px;
+  background:var(--card);border:1px solid var(--blue-200);border-radius:10px;width:38px;height:38px;
   display:grid;place-items:center;transition:background .18s,border-color .18s}
 .cal-nav:hover{background:var(--blue-50);border-color:var(--blue-400)}
 .cal-nav:focus-visible,.cal-today:focus-visible{outline:2px solid var(--blue-400);outline-offset:2px}
@@ -31,7 +31,7 @@
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
 
 .cal-cell{font-family:var(--body);text-align:left;display:flex;flex-direction:column;gap:5px;
-  background:var(--white);border:1px solid var(--line);border-radius:10px;padding:7px 8px 9px;
+  background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 8px 9px;
   overflow:hidden;transition:border-color .18s,box-shadow .18s,background .18s}
 .cal-cell.has{cursor:pointer}
 .cal-cell:disabled{cursor:default;background:transparent;border-style:dashed}
@@ -49,7 +49,7 @@
 .cell-events{display:flex;flex-direction:column;gap:4px;min-width:0}
 .cell-ev{display:block;background:var(--blue-50);border-left:2px solid var(--blue-400);
   border-radius:4px;padding:3px 5px;min-width:0}
-.cal-cell.sel .cell-ev{background:var(--white)}
+.cal-cell.sel .cell-ev{background:var(--card)}
 .cell-ev-time{display:block;font-size:12px;font-weight:600;color:var(--blue-800);line-height:1.25}
 .cell-ev-loc{display:block;font-size:11px;color:var(--muted);line-height:1.25;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -66,7 +66,7 @@
 .day-modal:not([open]){display:none}
 .modal-inner{width:min(560px,calc(100vw - 32px));max-height:calc(100vh - 64px);overflow-y:auto;
   margin:auto;position:absolute;inset:0;height:max-content;
-  background:var(--white);border-radius:var(--radius-lg);padding:24px 26px 26px;
+  background:var(--card);border-radius:var(--radius-lg);padding:24px 26px 26px;
   box-shadow:0 24px 60px rgba(4,44,83,.28);animation:modal-in .18s ease-out}
 @keyframes modal-in{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
 .modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}
@@ -90,7 +90,7 @@
 
 /* fallback embed — only rendered when the API path fails */
 .embed-frame{width:100%;height:620px;border:1px solid var(--line);border-radius:var(--radius);
-  background:var(--white);margin-top:14px}
+  background:var(--card);margin-top:14px}
 
 @media(max-width:760px){
   .subscribe-lbl{flex:1 1 100%;margin-bottom:2px}

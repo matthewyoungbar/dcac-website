@@ -3,7 +3,7 @@ import { Link } from 'wouter'
 import { InstagramFeed } from '../components/InstagramFeed.tsx'
 import { SchedulePreview } from '../components/SchedulePreview.tsx'
 import { Tile } from '../components/Tile.tsx'
-import intrasquadPhoto from '../assets/dcac_intrasquad_meet_2026.webp'
+import intrasquadPhoto from '../assets/pictures/dcac_intrasquad_meet_2026.webp'
 
 export function HomePage() {
   const heroInnerRef = useRef<HTMLDivElement>(null)
@@ -51,7 +51,7 @@ export function HomePage() {
           <path className="w1" d="M0,30 c56.7,-14 113.3,-14 170,0 c56.7,14 113.3,14 170,0 c56.7,-14 113.3,-14 170,0 c56.7,14 113.3,14 170,0 c56.7,-14 113.3,-14 170,0 c56.7,14 113.3,14 170,0 c56.7,-14 113.3,-14 170,0 c56.7,14 113.3,14 170,0 L1360,96 L0,96 Z" fill="#0C447C" />
           <path className="w2" d="M0,48 c56.7,-13 113.3,-13 170,0 c56.7,13 113.3,13 170,0 c56.7,-13 113.3,-13 170,0 c56.7,13 113.3,13 170,0 c56.7,-13 113.3,-13 170,0 c56.7,13 113.3,13 170,0 c56.7,-13 113.3,-13 170,0 c56.7,13 113.3,13 170,0 L1360,96 L0,96 Z" fill="#185FA5" />
           <path className="w3" d="M0,64 c56.7,-12 113.3,-12 170,0 c56.7,12 113.3,12 170,0 c56.7,-12 113.3,-12 170,0 c56.7,12 113.3,12 170,0 c56.7,-12 113.3,-12 170,0 c56.7,12 113.3,12 170,0 c56.7,-12 113.3,-12 170,0 c56.7,12 113.3,12 170,0 L1360,96 L0,96 Z" fill="#378ADD" />
-          <path d="M0,80 c56.7,-10 113.3,-10 170,0 c56.7,10 113.3,10 170,0 c56.7,-10 113.3,-10 170,0 c56.7,10 113.3,10 170,0 L680,96 L0,96 Z" fill="#fff" />
+          <path d="M0,80 c56.7,-10 113.3,-10 170,0 c56.7,10 113.3,10 170,0 c56.7,-10 113.3,-10 170,0 c56.7,10 113.3,10 170,0 L680,96 L0,96 Z" className="shore" fill="#fff" />
         </svg>
       </section>
 

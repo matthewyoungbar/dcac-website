@@ -1,6 +1,6 @@
 import { Link } from 'wouter'
 import { Callout } from '../components/Callout.tsx'
-import pridePhoto from '../assets/pride_parade_2025.webp'
+import pridePhoto from '../assets/pictures/pride_parade_2025.webp'
 import './AboutPage.css'
 
 const reasons = [

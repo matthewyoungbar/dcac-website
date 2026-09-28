@@ -1,9 +1,15 @@
 import { useState } from 'preact/hooks'
 import { Link } from 'wouter'
-import logo from '../assets/dcac_logo.svg'
+import logo from '../assets/logos/dcac_logo.svg'
+import logoDark from '../assets/logos/dcac_logo_dark.svg'
 
+/* the navy lettering vanishes on the dark-mode header, so dark mode swaps in
+   a copy with white letters (the red stars and waves stay) */
 const Logo = () => (
-  <img className="logo" src={logo} alt="DCAC" width="89" height="44" />
+  <picture>
+    <source srcset={logoDark} media="(prefers-color-scheme: dark)" />
+    <img className="logo" src={logo} alt="DCAC" width="89" height="44" />
+  </picture>
 )
 
 export function Header() {

@@ -1,6 +1,6 @@
 import faqs from '../content/faq.json'
 import { RichText } from '../components/RichText.tsx'
-import faqPhoto from '../assets/faq.webp'
+import faqPhoto from '../assets/pictures/faq.webp'
 import './FaqPage.css'
 
 const Chevron = () => (
