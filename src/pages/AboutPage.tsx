@@ -96,7 +96,7 @@ export function AboutPage() {
             height="740"
             loading="lazy"
           />
-          <figcaption>DCAC on Pennsylvania Avenue at the 2025 Pride parade.</figcaption>
+          <figcaption>DCAC with other IGLA+ teams on Pennsylvania Avenue at the 2025 WorldPride parade.</figcaption>
         </figure>
 
         <section className="meets-section">

@@ -10,7 +10,7 @@ export function Footer() {
     <footer>
       <div className="wrap foot">
         <div>
-          <p className="lede">DC's premiere Master's swim team since 1986.</p>
+          <p className="lede">DC's premiere Master's swim team since 1988.</p>
           <div className="social">
             <a href="https://instagram.com/swimdcac/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
