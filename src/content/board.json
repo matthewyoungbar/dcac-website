@@ -1,0 +1,62 @@
+[
+  {
+    "role": "Captain",
+    "name": "Carr Phillips",
+    "pronouns": "he/him",
+    "email": "captain@swimdcac.org",
+    "photo": "board/captain.webp"
+  },
+  {
+    "role": "Co-Captain",
+    "name": "Jacob Nishimura",
+    "pronouns": "he/him",
+    "email": "cocaptain@swimdcac.org",
+    "photo": "board/cocaptain.webp"
+  },
+  {
+    "role": "Treasurer",
+    "name": "Pablo Fernandez",
+    "pronouns": "he/him",
+    "email": "treasurer@swimdcac.org",
+    "photo": "board/treasurer.webp"
+  },
+  {
+    "role": "Secretary",
+    "name": "Francis Cullo",
+    "pronouns": "he/him",
+    "email": "secretary@swimdcac.org"
+  },
+  {
+    "role": "Competition",
+    "name": "Crosby Jurkewicz",
+    "pronouns": "he/him",
+    "email": "competition@swimdcac.org"
+  },
+  {
+    "role": "Partnerships and Development",
+    "name": "Mallory O'Connor",
+    "pronouns": "she/her",
+    "email": "development@swimdcac.org",
+    "photo": "board/development.webp"
+  },
+  {
+    "role": "Membership",
+    "name": "Connor Lee Harrigan",
+    "pronouns": "he/him",
+    "email": "membership@swimdcac.org"
+  },
+  {
+    "role": "Social",
+    "name": "Matthew Youngbar",
+    "pronouns": "any pronouns",
+    "email": "social@swimdcac.org",
+    "photo": "board/social.webp"
+  },
+  {
+    "role": "Publicity",
+    "name": "Camille Galles",
+    "pronouns": "she/her",
+    "email": "publicity@swimdcac.org",
+    "photo": "board/publicity.webp"
+  }
+]

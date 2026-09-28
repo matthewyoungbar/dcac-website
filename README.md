@@ -1,0 +1,59 @@
+# DCAC Website
+
+The website for the District of Columbia Aquatics Club. Built with [Preact](https://preactjs.com/), [Vite](https://vite.dev/) and TypeScript, with [wouter](https://github.com/molefrog/wouter) for routing.
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) 22 (the version CI builds with)
+- [Yarn](https://classic.yarnpkg.com/) 1.x (`npm install -g yarn`, or `corepack enable`)
+
+## Getting started
+
+```sh
+yarn install
+cp .env.example .env    # then fill in the values — see below
+yarn dev
+```
+
+The dev server runs at <http://localhost:5173> and reloads as you edit.
+
+## Environment variables
+
+The site runs without any of these, but the parts that depend on them will be empty.
+
+| Variable | Used for | How to set it |
+| --- | --- | --- |
+| `VITE_GOOGLE_CALENDAR_API_KEY` | The practice schedule (`src/useSchedule.ts`), read from a public Google Calendar | In `.env`. A Google Cloud API key with the Calendar API enabled, restricted to the site's domain(s). |
+Without the calendar key the schedule shows an error state and renders the normal Google Calendar embed.
+
+## Scripts
+
+| Command | What it does |
+| --- | --- |
+| `yarn dev` | Start the dev server with hot reload |
+| `yarn build` | Type-check and build the production site into `dist/` |
+| `yarn preview` | Serve the built `dist/` locally to check a production build |
+
+## Project layout
+
+```
+index.html              Page shell, favicon and fonts
+public/                 Static files served as-is (favicon, touch icon)
+src/
+  app.tsx               Routes
+  app.css               Global styles
+  pages/                One component (and stylesheet) per page
+  components/           Shared components (header, footer, tiles, …)
+  content/              Editable content: coaches.json, faq.json
+  assets/               Images and logos
+```
+
+### Editing content
+
+Coach bios and FAQ answers live in `src/content/*.json`. Photos they reference must be `.webp` files under `src/assets/`, named by their path from there — for example `"photo": "coaches/coach_sam.webp"`. Coach photos are 480×600.
+
+## Deployment
+
+Pushing to `main` deploys to GitHub Pages via `.github/workflows/deploy.yml`. The workflow can also be run manually from the Actions tab.
+
+The deploy reads `VITE_GOOGLE_CALENDAR_API_KEY`from the repository's Actions secrets.
