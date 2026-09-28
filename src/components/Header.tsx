@@ -1,11 +1,9 @@
 import { useState } from 'preact/hooks'
 import { Link } from 'wouter'
-import logoMark from '../assets/dcac_logo_mark.webp'
+import logo from '../assets/dcac_logo.svg'
 
-/* the club mark, cropped out of the full logo lockup — the lockup's "DCAC"
-   and tagline are dropped here, since the wordmark beside it stays live text */
 const Logo = () => (
-  <img className="mark" src={logoMark} alt="" width="55" height="26" />
+  <img className="logo" src={logo} alt="DCAC" width="89" height="44" />
 )
 
 export function Header() {
@@ -23,7 +21,6 @@ export function Header() {
         <div className="wrap nav">
           <Link className="brand" href="/" aria-label="DCAC home" onClick={close}>
             <Logo />
-            <span className="word">DCAC</span>
           </Link>
           <button className="menu-btn" onClick={toggle} aria-label="Toggle menu" aria-expanded={menuOpen}>
             {menuOpen ? '✕' : '☰'}

@@ -221,8 +221,8 @@ export function RecordsPage() {
         <p className="reach">
           Records are kept in{' '}
           <a href={SHEET_URL} target="_blank" rel="noopener noreferrer">the team's record book</a>{' '}
-          and this page reads from it directly. Spotted a time that should be here? Email{' '}
-          <a href="mailto:competition@swimdcac.org">competition@swimdcac.org</a>.
+          and this page reads from it directly. Email{' '}
+          <a href="mailto:competition@swimdcac.org">competition@swimdcac.org</a> for any fixes.
         </p>
       </main>
     </>
