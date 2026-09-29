@@ -27,13 +27,9 @@
 .about-prose a{color:var(--blue-600);font-weight:600}
 .about-prose p.about-affirm-lead{margin-top:18px;font-weight:600;color:var(--ink)}
 
-.about-affirm,.about-keypoints{list-style:none;margin-top:12px;display:grid;gap:10px}
-.about-affirm li,.about-keypoints li{position:relative;padding-left:30px;color:var(--muted);font-size:16px}
+.about-affirm{list-style:none;margin-top:12px;display:grid;gap:10px}
+.about-affirm li{position:relative;padding-left:30px;color:var(--muted);font-size:16px}
 .about-affirm li::before{content:'✓';position:absolute;left:6px;top:.18em;color:var(--purple);font-weight:700}
-.about-keypoints li::before{content:'';position:absolute;left:8px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--blue-400)}
 
 .about-sub{font-size:19px;color:var(--navy);margin:30px 0 12px}
 
-.about-photo{margin:0 0 36px}
-.about-photo img{width:100%;height:auto;border-radius:var(--radius-lg)}
-.about-photo figcaption{margin-top:10px;font-size:14px;color:var(--muted)}

@@ -1,5 +1,6 @@
 import { Link } from 'wouter'
 import { Callout } from '../components/Callout.tsx'
+import { PagePhoto } from '../components/PagePhoto.tsx'
 import pridePhoto from '../assets/pictures/pride_parade_2025.webp'
 import './AboutPage.css'
 
@@ -88,16 +89,13 @@ export function AboutPage() {
           </p>
         </section>
 
-        <figure className="about-photo">
-          <img
-            src={pridePhoto}
-            alt="DCAC swimmers marching together behind the team float at the 2025 Pride parade in Washington, DC."
-            width="1110"
-            height="740"
-            loading="lazy"
-          />
-          <figcaption>DCAC with other IGLA+ teams on Pennsylvania Avenue at the 2025 WorldPride parade.</figcaption>
-        </figure>
+        <PagePhoto
+          src={pridePhoto}
+          alt="DCAC swimmers marching together behind the team float at the 2025 Pride parade in Washington, DC."
+          width={1110}
+          height={740}
+          caption="DCAC with other IGLA+ teams on Pennsylvania Avenue at the 2025 WorldPride parade."
+        />
 
         <section className="meets-section">
           <h2 className="section-title">The numbers</h2>
@@ -196,7 +194,7 @@ export function AboutPage() {
               Swimmers who wish to compete in meets have two opportunities for recognition — at the local and national level. This new policy is most relevant to them.
             </p>
             <p className="about-affirm-lead">A few key points about the new policy:</p>
-            <ul className="about-keypoints">
+            <ul className="dot-list">
               <li>The men's competition category is now renamed to the men's/open competition category.</li>
               <li>Eligibility for local recognition programs (such as awards and points during a meet) is determined based on whether the state or jurisdiction where a meet is located has nondiscrimination laws that include gender identity protections.</li>
               <li>In jurisdictions with nondiscrimination laws that include gender identity protections (such as DC), any swimmer is welcome to win awards and score points in any gender category.</li>

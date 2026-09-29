@@ -1,6 +1,8 @@
 import { Link } from 'wouter'
 import { Callout } from '../components/Callout.tsx'
 import { Tile } from '../components/Tile.tsx'
+import { PagePhoto } from '../components/PagePhoto.tsx'
+import meetPhoto from '../assets/pictures/craig_mallory_pablo_lauren.webp'
 import './CompetitionPage.css'
 
 const records = [
@@ -76,13 +78,20 @@ export function CompetitionPage() {
           </div>
         </section>
 
+        <PagePhoto
+          src={meetPhoto}
+          alt="Four DCAC swimmers on a pool deck at a meet, arm in arm and smiling, three in team caps and suits and one in a DCAC T-shirt."
+          width={1200}
+          height={800}
+        />
+
         <section className="meets-section">
           <h2 className="section-title">IGLA+</h2>
           <p className="section-body">
-            DCAC's marquee event each year is either the <strong>IGLA+ World Championships</strong> or the <strong>Gay Games</strong>. We've been travelling to them — and winning at them — for three decades, and we proudly hosted the championships in <strong>1996</strong>, <strong>2008</strong>, and again in <strong>2025</strong> here in Washington, DC.
+            DCAC's marquee event each year is either the <strong>IGLA+ World Championships</strong> or the <strong>Gay Games</strong>. We've been travelling to them for three decades, and we proudly hosted the championships in <strong>1996</strong>, <strong>2008</strong>, and again in <strong>2025</strong> here in Washington, DC.
           </p>
 
-          <div className="igla-panel">
+          <div className="meets-cta-card igla-panel">
             <h3>What is IGLA+?</h3>
             <p>
               IGLA+ is the <strong>International Group of LGBTQIA+ Aquatics</strong>, previously known as International Gay &amp; Lesbian Aquatics. It is the world's foremost organization devoted to swimming, water polo, diving, and artistic swimming within the LGBTQIA+ community and amongst its allies, with more than 100 member clubs across six continents. DCAC is one of them.
@@ -104,7 +113,7 @@ export function CompetitionPage() {
             DCAC will award an undetermined number of scholarships to DCAC swimmers to aid in offsetting expenses for swimmers competing in the annual IGLA+ Championship.
           </p>
           <p className="section-body scholarship-lead">Award recipients are required to:</p>
-          <ul className="scholarship-reqs">
+          <ul className="dot-list">
             <li>Compete in the maximum allowable number of individual and relay events</li>
             <li>Take part in the Pink Flamingo performance at the meet</li>
             <li>Actively participate in DCAC fundraising and volunteer events</li>
@@ -113,6 +122,8 @@ export function CompetitionPage() {
             <Callout>
               <p>
                 If interested, please request an application from <a href="mailto:treasurer@swimdcac.org">treasurer@swimdcac.org</a>.
+                The Yolanda Markey and Marcay Dickens &amp; Joan Dever funds also help swimmers get to IGLA —{' '}
+                <Link href="/scholarships">see all scholarships</Link>.
               </p>
             </Callout>
           </div>

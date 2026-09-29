@@ -1,6 +1,7 @@
 import { Link } from 'wouter'
 import { Callout } from '../components/Callout.tsx'
 import { Step, Steps } from '../components/Step.tsx'
+import { PagePhoto } from '../components/PagePhoto.tsx'
 import practicePhoto from '../assets/pictures/oxon_run_practice.webp'
 import './JoinPage.css'
 
@@ -33,16 +34,13 @@ export function JoinPage() {
           </Callout>
         </div>
 
-        <figure className="join-photo">
-          <img
-            src={practicePhoto}
-            alt="About thirty DCAC swimmers in caps and goggles gathered in the shallow end of an outdoor pool."
-            width="1110"
-            height="740"
-            loading="lazy"
-          />
-          <figcaption>Practice at Oxon Run Pool.</figcaption>
-        </figure>
+        <PagePhoto
+          src={practicePhoto}
+          alt="About thirty DCAC swimmers in caps and goggles gathered in the shallow end of an outdoor pool."
+          width={1110}
+          height={740}
+          caption="Practice at Oxon Run Pool."
+        />
 
         <section className="meets-section">
           <h2 className="section-title">When you're ready to become a member</h2>
@@ -87,7 +85,7 @@ export function JoinPage() {
                 price="$50.00 D.C. residents · $62.50 non-residents, per calendar year"
               >
                 <p className="step-body">
-                  Cost is prorated and visible during checkout. <a href="#">Registration and purchase location here.</a> All of our practice locations use a scanning system called RecTrac — if you aren't registered in the system and haven't purchased the DPR Masters Swim Membership, DPR will not let you in. Once registered with DPR, select Memberships (Aquatics &amp; Fitness), then DPR Masters Swim Membership.
+                  Cost is prorated and visible during checkout. <a href="https://dcwashingtonweb.myvscloud.com/webtrac/web/search.html?module=PM&type=Aquatics&keyword=masters">Registration and purchase location here.</a> All of our practice locations use a scanning system called RecTrac — if you aren't registered in the system and haven't purchased the DPR Masters Swim Membership, DPR will not let you in. Once registered with DPR, select Memberships (Aquatics &amp; Fitness), then DPR Masters Swim Membership.
                 </p>
               </Step>
             </Steps>
@@ -106,7 +104,7 @@ export function JoinPage() {
           <h2 className="section-title">Scholarships</h2>
           <Callout tone="purple">
             <p>
-              DCAC is committed to helping swimmers who face financial challenges. If you have a financial hardship and would be unable to participate at the regular dues rates above, please contact the Treasurer (<a href="mailto:treasurer@swimdcac.org">treasurer@swimdcac.org</a>) about reductions in dues based on financial hardship, or if you're interested in the Under 30 Award. Pool dues may be reduced on an individual basis at the discretion of the Board. See our scholarship tab on the website.
+              DCAC is committed to helping swimmers who face financial challenges. If you have a financial hardship and would be unable to participate at the regular dues rates above, please contact the Treasurer (<a href="mailto:treasurer@swimdcac.org">treasurer@swimdcac.org</a>) about reductions in dues based on financial hardship, or if you're interested in the Under 30 Award. Pool dues may be reduced on an individual basis at the discretion of the Board. See <Link href="/scholarships">all of our scholarships</Link>.
             </p>
           </Callout>
         </section>

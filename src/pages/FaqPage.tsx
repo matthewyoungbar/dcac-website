@@ -1,5 +1,6 @@
 import faqs from '../content/faq.json'
 import { RichText } from '../components/RichText.tsx'
+import { PagePhoto } from '../components/PagePhoto.tsx'
 import faqPhoto from '../assets/pictures/faq.webp'
 import './FaqPage.css'
 
@@ -22,15 +23,13 @@ export function FaqPage() {
 
       <main id="main" className="wrap" style={{ paddingTop: '48px', paddingBottom: '10px' }}>
 
-        <figure className="faq-photo">
-          <img
-            src={faqPhoto}
-            alt="Three DCAC members in swimsuits, holding pool floats and wearing rainbow heart stickers, at a DC Pride event."
-            width="1200"
-            height="1144"
-            loading="lazy"
-          />
-        </figure>
+        <PagePhoto
+          src={faqPhoto}
+          alt="Three DCAC members in swimsuits, holding pool floats and wearing rainbow heart stickers, at a DC Pride event."
+          width={1200}
+          height={1144}
+          narrow
+        />
 
         <section className="meets-section">
           <div className="faq-list">

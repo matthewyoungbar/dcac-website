@@ -127,6 +127,15 @@ main{padding:54px 0 10px}
 /* set while a modal dialog is open — showModal() blocks clicks but not scrolling */
 body.modal-open{overflow:hidden}
 
+/* bulleted list — the reset strips list markers, so the dots are drawn back
+   in. --dot picks the bullet color; .compact suits narrower cards. */
+.dot-list{list-style:none;margin-top:12px;display:grid;gap:10px}
+.dot-list li{position:relative;padding-left:30px;color:var(--muted);font-size:16px}
+.dot-list li::before{content:'';position:absolute;left:8px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--dot,var(--blue-400))}
+.dot-list.compact{gap:8px}
+.dot-list.compact li{padding-left:22px;font-size:15px}
+.dot-list.compact li::before{left:5px}
+
 .reach{text-align:center;color:var(--muted);font-size:15px;margin:30px 0 8px}
 .reach a{color:var(--blue-600);font-weight:600}
 

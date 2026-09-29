@@ -1,0 +1,4 @@
+.page-photo{margin:0 0 36px}
+.page-photo.narrow{margin-inline:auto;max-width:620px}
+.page-photo img{width:100%;height:auto;border-radius:var(--radius-lg)}
+.page-photo figcaption{margin-top:10px;font-size:14px;color:var(--muted)}

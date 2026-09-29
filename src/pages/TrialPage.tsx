@@ -1,6 +1,8 @@
 import { Link } from 'wouter'
 import { Callout } from '../components/Callout.tsx'
 import { Step, Steps } from '../components/Step.tsx'
+import { PagePhoto } from '../components/PagePhoto.tsx'
+import trialPhoto from '../assets/pictures/jacob_noura_eric.webp'
 
 export function TrialPage() {
   return (
@@ -20,6 +22,13 @@ export function TrialPage() {
             We encourage prospective new members to try practices prior to becoming a member. We would like to provide the opportunity for you to jump into the pool and get a feel for our workouts and team atmosphere, without the barrier of the membership process. You are also welcome to come by and observe a practice before taking the plunge!
           </p>
         </section>
+
+        <PagePhoto
+          src={trialPhoto}
+          alt="Three smiling DCAC swimmers in team caps, arms around each other's shoulders in a pool lane."
+          width={1200}
+          height={800}
+        />
 
         <div style={{ marginBottom: '36px' }}>
           <Callout tone="neutral">

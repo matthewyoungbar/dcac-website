@@ -46,6 +46,7 @@ export function Footer() {
           <Link href="/about">About us</Link>
           <Link href="/coaches">Coaches</Link>
           <a href="https://www.clubassistant.com/club/login_form.cfm?c=1344">Member login</a>
+          <Link href="/scholarships">Scholarships</Link>
           <Link href="/donate">Donate</Link>
           <Link href="/contact">Contact</Link>
         </div>
