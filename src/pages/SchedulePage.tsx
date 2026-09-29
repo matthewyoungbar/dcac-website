@@ -7,9 +7,6 @@ import {
 } from '../calendarLinks.ts'
 import './SchedulePage.css'
 
-/** Fills the grid out to whole weeks; 6 rows keeps the height stable month to month. */
-const ROWS = 6
-
 export function SchedulePage() {
   const [offset, setOffset] = useState(0)
   const [picked, setPicked] = useState<string | null>(null)
@@ -89,7 +86,7 @@ export function SchedulePage() {
               <div className="cal-dow" aria-hidden="true">
                 {WEEKDAYS.map(d => <span key={d}>{d}</span>)}
               </div>
-              <div className="cal-grid" style={{ gridTemplateRows: `repeat(${Math.max(ROWS, Math.ceil(days.length / 7))}, minmax(88px, auto))` }}>
+              <div className="cal-grid" style={{ gridTemplateRows: `repeat(${days.length / 7}, minmax(88px, auto))` }}>
                 {days.map(d => (
                   <DayCell
                     key={d.key}

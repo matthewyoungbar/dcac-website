@@ -10,8 +10,8 @@ const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Se
 const MONTH_FULL = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December']
 
-/** Weekday headings for a Monday-first grid. */
-export const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+/** Weekday headings for a Sunday-first grid. */
+export const WEEKDAYS = DAY_NAMES
 
 /**
  * Practice focus for the day, published on the source calendar as an all-day
@@ -92,17 +92,16 @@ interface Bounds {
   label: string
 }
 
-/** Days since the most recent Monday. */
-function sinceMonday(d: Date) {
-  const dow = d.getDay()
-  return dow === 0 ? 6 : dow - 1
+/** Days since the most recent Sunday — weeks run Sunday to Saturday. */
+function sinceSunday(d: Date) {
+  return d.getDay()
 }
 
-/** Monday 00:00 through Sunday 23:59 of the current week. */
+/** Sunday 00:00 through Saturday 23:59 of the current week. */
 function weekBounds(): Bounds {
   const now = new Date()
   const start = new Date(now)
-  start.setDate(now.getDate() - sinceMonday(now))
+  start.setDate(now.getDate() - sinceSunday(now))
   start.setHours(0, 0, 0, 0)
   const end = new Date(start)
   end.setDate(start.getDate() + 6)
@@ -111,8 +110,9 @@ function weekBounds(): Bounds {
 }
 
 /**
- * A whole month padded out to complete Monday–Sunday weeks, so the grid is
+ * A whole month padded out to complete Sunday–Saturday weeks, so the grid is
  * rectangular and the borrowed neighbour days still show their practices.
+ * That's 4–6 weeks depending on the month; the grid sizes itself to match.
  */
 function monthBounds(offset: number): Bounds {
   const now = new Date()
@@ -120,11 +120,11 @@ function monthBounds(offset: number): Bounds {
   const last = new Date(first.getFullYear(), first.getMonth() + 1, 0)
 
   const start = new Date(first)
-  start.setDate(first.getDate() - sinceMonday(first))
+  start.setDate(first.getDate() - sinceSunday(first))
   start.setHours(0, 0, 0, 0)
 
   const end = new Date(last)
-  end.setDate(last.getDate() + (6 - sinceMonday(last)))
+  end.setDate(last.getDate() + (6 - sinceSunday(last)))
   end.setHours(23, 59, 59, 999)
 
   return {
@@ -179,7 +179,8 @@ function shortLocation(loc: string) {
  * browser — real dates (and the "today" highlight) wait for the effect below.
  */
 function placeholderDays(range: Range): ScheduleDay[] {
-  return Array.from({ length: range === 'week' ? 7 : 42 }, (_, i) => ({
+  // five weeks is the most common month, so the skeleton usually matches the real grid's height
+  return Array.from({ length: range === 'week' ? 7 : 35 }, (_, i) => ({
     key: `placeholder-${i}`,
     name: '',
     month: '',

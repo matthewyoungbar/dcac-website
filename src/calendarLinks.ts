@@ -81,7 +81,7 @@ export const embedUrl = (() => {
   url.searchParams.set('src', CALENDAR_ID)
   url.searchParams.set('ctz', CLUB_TZ)
   url.searchParams.set('mode', 'MONTH')
-  url.searchParams.set('wkst', '2') // weeks start Monday, matching the rest of the site
+  url.searchParams.set('wkst', '1') // weeks start Sunday, matching the rest of the site
   url.searchParams.set('showTitle', '0')
   url.searchParams.set('showPrint', '0')
   url.searchParams.set('showTabs', '0')
