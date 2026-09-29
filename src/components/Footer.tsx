@@ -38,7 +38,7 @@ export function Footer() {
           <Link href="/trial">Trial swims</Link>
           <Link href="/faq">FAQ</Link>
           <Link href="/schedule">Practice times</Link>
-          <Link href="/competition">Competition &amp; events</Link>
+          <Link href="/competition">Competition</Link>
           <Link href="/records">Team records</Link>
         </div>
         <div>

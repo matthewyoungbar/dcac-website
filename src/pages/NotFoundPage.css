@@ -1,0 +1,4 @@
+.nf-code{font-family:var(--display);font-size:15px;font-weight:600;letter-spacing:.14em;color:var(--blue-200);margin-bottom:6px}
+/* the bad path can be long and unbroken, so it's allowed to wrap anywhere */
+.nf-path{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;color:#fff;
+  background:rgba(255,255,255,.1);border-radius:6px;padding:1px 7px;overflow-wrap:anywhere}
