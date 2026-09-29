@@ -44,10 +44,9 @@ jobs:
           INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
         run: yarn build
 
-      - name: Add SPA fallback
-        # Pages has no rewrite rules, so a deep link like /schedule would 404.
-        # Serving the app from 404.html lets the client router take over.
-        run: cp dist/index.html dist/404.html
+      # No SPA fallback step needed: the build prerenders every page to its own
+      # <route>/index.html (so deep links get a 200) plus a real 404.html for
+      # unknown paths. See src/prerender.tsx.
 
       - uses: actions/upload-pages-artifact@v5
         with:

@@ -25,7 +25,7 @@ export function SchedulePreview() {
             <li key={d.key} className={`day${d.isToday ? ' today' : ''}${d.practices.length ? '' : ' rest'}`}>
               <div className="day-head">
                 <span className="day-name">{d.isToday ? 'Today' : d.name}</span>
-                <span className="day-num">{d.date}</span>
+                <span className="day-num">{d.date || ''}</span>
               </div>
               {!loading && <ThemeTag theme={d.theme} />}
               {loading ? (

@@ -173,6 +173,24 @@ function shortLocation(loc: string) {
     .trim()
 }
 
+/**
+ * Blank stand-ins for the first render. The page is prerendered at build time,
+ * so anything drawn before mount has to be the same on the server and in the
+ * browser — real dates (and the "today" highlight) wait for the effect below.
+ */
+function placeholderDays(range: Range): ScheduleDay[] {
+  return Array.from({ length: range === 'week' ? 7 : 42 }, (_, i) => ({
+    key: `placeholder-${i}`,
+    name: '',
+    month: '',
+    date: 0,
+    isToday: false,
+    inMonth: true,
+    theme: null,
+    practices: [],
+  }))
+}
+
 /** Every day in the range, pre-seeded with no practices, so gaps still render. */
 function emptyDays({ start, end, monthIndex }: Bounds): ScheduleDay[] {
   const today = dayKey(new Date())
@@ -196,8 +214,8 @@ function emptyDays({ start, end, monthIndex }: Bounds): ScheduleDay[] {
 }
 
 export function useSchedule(range: Range = 'week', monthOffset = 0) {
-  const [days, setDays] = useState<ScheduleDay[]>(() => emptyDays(bounds(range, monthOffset)))
-  const [label, setLabel] = useState(() => bounds(range, monthOffset).label)
+  const [days, setDays] = useState<ScheduleDay[]>(() => placeholderDays(range))
+  const [label, setLabel] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 

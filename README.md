@@ -57,3 +57,9 @@ Coach bios and FAQ answers live in `src/content/*.json`. Photos they reference m
 Pushing to `main` deploys to GitHub Pages via `.github/workflows/deploy.yml`. The workflow can also be run manually from the Actions tab.
 
 The deploy reads `VITE_GOOGLE_CALENDAR_API_KEY`from the repository's Actions secrets.
+
+### Prerendering
+
+`yarn build` prerenders every page to its own `index.html` (e.g. `dist/about/index.html`), plus a `404.html` for unknown paths, so direct links return a 200 and search engines see real content. The browser then hydrates that HTML. Pages are discovered by following internal links from the home page; a page nothing links to must be added to `additionalPrerenderRoutes` in `vite.config.ts`.
+
+Only the first render is captured — the schedule and records still load live in the browser. Anything that reads the current date or `window` must do so in an effect, not during render, or the prerendered HTML won't match what the browser draws.

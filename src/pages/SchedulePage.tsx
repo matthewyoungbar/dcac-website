@@ -241,7 +241,7 @@ function DayCell({ day, loading, selected, onPick }: DayCellProps) {
       aria-haspopup="dialog"
     >
       <span className="cell-top">
-        <span className="cell-num">{day.date}</span>
+        <span className="cell-num">{day.date || ''}</span>
         <ThemeTag theme={day.theme} variant="dot" />
       </span>
       {loading ? (

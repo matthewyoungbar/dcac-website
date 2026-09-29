@@ -20,9 +20,10 @@ import './app.css'
 // and an empty string when the site is served from the domain root.
 const routerBase = import.meta.env.BASE_URL.replace(/\/$/, '')
 
-export function App() {
+/** ssrPath is only set when prerendering; in the browser the router reads the real URL. */
+export function App({ ssrPath }: { ssrPath?: string }) {
   return (
-    <Router base={routerBase}>
+    <Router base={routerBase} ssrPath={ssrPath}>
       <Header />
       <Switch>
         <Route path="/" component={HomePage} />
