@@ -54,6 +54,11 @@ const pages: Record<string, PageMeta> = {
     description: 'Every DCAC practice on the calendar, with pools and times. Subscribe to get practices in your own calendar.',
     image: images.practice,
   },
+  '/directions': {
+    title: 'Pool directions',
+    description: 'Where DCAC practices: addresses, parking, entrances, locker rooms, and the nearest Metro station for each pool.',
+    image: images.practice,
+  },
   '/competition': {
     title: 'Competition',
     description: 'From local Masters meets to IGLA+ world championships — DCAC competes, and wins. 11× IGLA World Champions.',

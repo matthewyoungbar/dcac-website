@@ -1,3 +1,4 @@
+import { Link } from 'wouter'
 import { useState, useMemo, useRef, useEffect } from 'preact/hooks'
 import { useSchedule, WEEKDAYS, type ScheduleDay } from '../useSchedule.ts'
 import { ThemeTag } from '../components/ThemeTag.tsx'
@@ -106,6 +107,7 @@ export function SchedulePage() {
         <DayModal day={selected} onClose={() => setPicked(null)} />
 
         <p className="reach">
+          Not sure how to get there? See <Link href="/directions">pool directions</Link>.{' '}
           Times or pools look wrong? Email{' '}
           <a href="mailto:cocaptain@swimdcac.org">cocaptain@swimdcac.org</a>.
         </p>

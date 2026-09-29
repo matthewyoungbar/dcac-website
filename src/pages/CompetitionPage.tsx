@@ -8,8 +8,8 @@ import './CompetitionPage.css'
 const records = [
   {
     color: 'blue' as const,
-    title: '11× IGLA World Champions',
-    description: 'Including 2001, 2003–2005, 2008, 2011 & 2013',
+    title: '11× IGLA+ World Champions',
+    description: 'Including 2001, 2003–2005, 2008, 2011, 2013, and 2025',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M7 4h10v5a5 5 0 0 1-10 0V4z" />

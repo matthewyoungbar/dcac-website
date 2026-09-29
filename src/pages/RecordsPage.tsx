@@ -208,6 +208,17 @@ export function RecordsPage() {
           </>
         )}
 
+        <div className="rec-igla">
+          <Callout>
+            <p>
+              Several DCAC swimmers also hold IGLA+ world records.{' '}
+              <a href="https://www.igla.org/swimmingrecords" target="_blank" rel="noopener noreferrer">
+                See the IGLA+ swimming records
+              </a>.
+            </p>
+          </Callout>
+        </div>
+
         <div className="rec-disclaimer">
           <Callout tone="purple">
             <p>

@@ -37,7 +37,7 @@ const reasons = [
     body: (
       <>
         <p>
-          With a great mix of coaches, DCAC's practices promise to challenge your physical prowess. The team trains for 1.5 hours, seven times per week (see <Link href="/schedule">practice schedule</Link>). You can swim as many or as few practices as you would like and swim in a lane that best matches your speed and ability.
+          With a great mix of coaches, DCAC's practices promise to challenge your physical prowess. The team trains for 1.5 hours, nine times per week (see <Link href="/schedule">practice schedule</Link>). You can swim as many or as few practices as you would like and swim in a lane that best matches your speed and ability.
         </p>
         <p>
           Each practice will focus on improving stroke technique and building strength, endurance, and aerobic conditioning.
@@ -113,7 +113,7 @@ export function AboutPage() {
             <div className="accolade t-purple">
               <span className="accolade-num">Worldwide</span>
               <span className="accolade-label">One of the largest LGBTQ teams</span>
-              <span className="accolade-detail">Primarily — but not exclusively — LGBTQ, and everyone is welcome</span>
+              <span className="accolade-detail">Primarily, but not exclusively, LGBTQ, and everyone is welcome</span>
             </div>
             <div className="accolade t-deep">
               <span className="accolade-num">2</span>

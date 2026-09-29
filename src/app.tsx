@@ -14,6 +14,7 @@ import { FaqPage } from './pages/FaqPage.tsx'
 import { CoachesPage } from './pages/CoachesPage.tsx'
 import { RecordsPage } from './pages/RecordsPage.tsx'
 import { ScholarshipsPage } from './pages/ScholarshipsPage.tsx'
+import { DirectionsPage } from './pages/DirectionsPage.tsx'
 import { NotFoundPage } from './pages/NotFoundPage.tsx'
 import { metaFor, notFoundMeta, documentTitle } from './pageMeta.ts'
 import './app.css'
@@ -50,6 +51,7 @@ export function App({ ssrPath }: { ssrPath?: string }) {
         <Route path="/coaches" component={CoachesPage} />
         <Route path="/records" component={RecordsPage} />
         <Route path="/scholarships" component={ScholarshipsPage} />
+        <Route path="/directions" component={DirectionsPage} />
         {/* no path — matches anything the routes above didn't */}
         <Route component={NotFoundPage} />
       </Switch>

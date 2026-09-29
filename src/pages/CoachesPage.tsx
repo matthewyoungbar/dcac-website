@@ -34,7 +34,7 @@ export function CoachesPage() {
         </section>
 
         <p className="reach">
-          Questions for the coaching staff? Email <a href="mailto:captain@swimdcac.org">captain@swimdcac.org</a>.
+          Questions for the coaching staff? Email <a href="mailto:cocaptain@swimdcac.org">cocaptain@swimdcac.org</a>.
         </p>
       </main>
     </>
