@@ -40,6 +40,8 @@ jobs:
           # base_path is '/dcac-website' for project Pages and '' for a custom
           # domain, so this yields the right Vite base either way.
           VITE_BASE: ${{ steps.pages.outputs.base_path }}/
+          # absolute URL for link-preview tags (og:image, og:url) — see src/pageMeta.ts
+          VITE_SITE_URL: ${{ steps.pages.outputs.base_url }}
           VITE_GOOGLE_CALENDAR_API_KEY: ${{ secrets.VITE_GOOGLE_CALENDAR_API_KEY }}
           INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
         run: yarn build

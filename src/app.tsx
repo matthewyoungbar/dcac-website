@@ -1,4 +1,5 @@
-import { Router, Route, Switch } from 'wouter'
+import { useEffect } from 'preact/hooks'
+import { Router, Route, Switch, useLocation } from 'wouter'
 import { Header } from './components/Header.tsx'
 import { Footer } from './components/Footer.tsx'
 import { HomePage } from './pages/HomePage.tsx'
@@ -14,16 +15,27 @@ import { CoachesPage } from './pages/CoachesPage.tsx'
 import { RecordsPage } from './pages/RecordsPage.tsx'
 import { ScholarshipsPage } from './pages/ScholarshipsPage.tsx'
 import { NotFoundPage } from './pages/NotFoundPage.tsx'
+import { metaFor, notFoundMeta, documentTitle } from './pageMeta.ts'
 import './app.css'
 
 // Vite injects the deploy base; wouter wants it without the trailing slash,
 // and an empty string when the site is served from the domain root.
 const routerBase = import.meta.env.BASE_URL.replace(/\/$/, '')
 
+/** The prerendered <title> covers the first page; this keeps it right as you navigate. */
+function TitleSync() {
+  const [path] = useLocation()
+  useEffect(() => {
+    document.title = documentTitle(metaFor(path) ?? notFoundMeta)
+  }, [path])
+  return null
+}
+
 /** ssrPath is only set when prerendering; in the browser the router reads the real URL. */
 export function App({ ssrPath }: { ssrPath?: string }) {
   return (
     <Router base={routerBase} ssrPath={ssrPath}>
+      <TitleSync />
       <Header />
       <Switch>
         <Route path="/" component={HomePage} />

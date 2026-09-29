@@ -62,4 +62,6 @@ The deploy reads `VITE_GOOGLE_CALENDAR_API_KEY`from the repository's Actions sec
 
 `yarn build` prerenders every page to its own `index.html` (e.g. `dist/about/index.html`), plus a `404.html` for unknown paths, so direct links return a 200 and search engines see real content. The browser then hydrates that HTML. Pages are discovered by following internal links from the home page; a page nothing links to must be added to `additionalPrerenderRoutes` in `vite.config.ts`.
 
+Each page's tab title, description, and link-preview image (the Open Graph tags Slack, iMessage, etc. read) come from `src/pageMeta.ts` — a new page needs an entry there, or the build fails. Preview images live in `public/og/` as 1200×630 JPEGs. Link previews need absolute URLs, so the deploy sets `VITE_SITE_URL` from GitHub Pages' own address.
+
 Only the first render is captured — the schedule and records still load live in the browser. Anything that reads the current date or `window` must do so in an effect, not during render, or the prerendered HTML won't match what the browser draws.
