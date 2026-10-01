@@ -41,7 +41,7 @@ export interface PageMeta {
 const pages: Record<string, PageMeta> = {
   '/': {
     title: SITE_NAME,
-    description: "DC's LGBTQ+ masters swim team. Every body, every stroke, every pace — and your first two practices are free.",
+    description: "DC's LGBTQ+ masters swim team.",
     image: images.intrasquad,
   },
   '/about': {
@@ -61,7 +61,7 @@ const pages: Record<string, PageMeta> = {
   },
   '/competition': {
     title: 'Competition',
-    description: 'From local Masters meets to IGLA+ world championships — DCAC competes, and wins. 11× IGLA World Champions.',
+    description: 'From local Masters meets to IGLA+ world championships.',
     image: images.meet,
   },
   '/coaches': {
@@ -91,7 +91,7 @@ const pages: Record<string, PageMeta> = {
   },
   '/scholarships': {
     title: 'Scholarships',
-    description: 'Help with membership dues and with competing at IGLA, including the Yolanda Markey and the Marcay Dickens & Joan Dever scholarship funds.',
+    description: 'Help with membership dues and with competing at IGLA.',
     image: images.meet,
   },
   '/donate': {

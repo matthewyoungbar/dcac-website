@@ -4,7 +4,7 @@ The website for the District of Columbia Aquatics Club. Built with [Preact](http
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) 22 (the version CI builds with)
+- [Node.js](https://nodejs.org/) 26 (the version CI builds with)
 - [Yarn](https://classic.yarnpkg.com/) 1.x (`npm install -g yarn`, or `corepack enable`)
 
 ## Getting started
@@ -50,7 +50,7 @@ src/
 
 ### Editing content
 
-Coach bios and FAQ answers live in `src/content/*.json`. Photos they reference must be `.webp` files under `src/assets/`, named by their path from there — for example `"photo": "coaches/coach_sam.webp"`. Coach photos are 480×600.
+Coach bios and FAQ answers live in `src/content/*.json`. Photos they reference must be `.webp` files under `src/assets/`, named by their path from there, ex. `"photo": "coaches/coach_sam.webp"`. Coach photos are 480×600.
 
 ## Deployment
 
@@ -62,6 +62,6 @@ The deploy reads `VITE_GOOGLE_CALENDAR_API_KEY`from the repository's Actions sec
 
 `yarn build` prerenders every page to its own `index.html` (e.g. `dist/about/index.html`), plus a `404.html` for unknown paths, so direct links return a 200 and search engines see real content. The browser then hydrates that HTML. Pages are discovered by following internal links from the home page; a page nothing links to must be added to `additionalPrerenderRoutes` in `vite.config.ts`.
 
-Each page's tab title, description, and link-preview image (the Open Graph tags Slack, iMessage, etc. read) come from `src/pageMeta.ts` — a new page needs an entry there, or the build fails. Preview images live in `public/og/` as 1200×630 JPEGs. Link previews need absolute URLs, so the deploy sets `VITE_SITE_URL` from GitHub Pages' own address.
+Each page's tab title, description, and link-preview image (the Open Graph tags Slack, iMessage, etc. read) come from `src/pageMeta.ts`. A new page needs an entry there, or the build fails. Preview images live in `public/og/` as 1200×630 JPEGs. Link previews need absolute URLs, so the deploy sets `VITE_SITE_URL` from GitHub Pages' own address.
 
-Only the first render is captured — the schedule and records still load live in the browser. Anything that reads the current date or `window` must do so in an effect, not during render, or the prerendered HTML won't match what the browser draws.
+Dynamically fetched content like the schedule and records still load live in the browser. Anything that reads the current date or `window` must do so in an effect, not during render, or the prerendered HTML won't match what the browser draws.
