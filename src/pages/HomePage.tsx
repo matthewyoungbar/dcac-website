@@ -65,7 +65,7 @@ export function HomePage() {
             </svg>
             <p className="tag">New to the team?</p>
             <h2>Your first two swims are free!</h2>
-            <p>No experience needed. Just bring a suit, goggles, and yourself. We'll meet you at the wall.</p>
+            <p>Just bring a suit, goggles, and yourself. See you in the pool!</p>
             <span className="btn btn-red" style={{ color: '#fff', display: 'inline-block' }}>Plan your first visit</span>
           </div>
           {/* alt="" — the card's own copy already names the destination, so the
