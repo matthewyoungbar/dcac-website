@@ -10,7 +10,7 @@ export function Footer() {
     <footer>
       <div className="wrap foot">
         <div>
-          <p className="lede">DC's premiere Master's swim team since 1988.</p>
+          <p className="lede">DC's premier Master's swim team since 1988.</p>
           <div className="social">
             <a href="https://instagram.com/swimdcac/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -46,6 +46,7 @@ export function Footer() {
           <h4>The club</h4>
           <Link href="/about">About us</Link>
           <Link href="/coaches">Coaches</Link>
+          <a href="https://www.bonfire.com/store/dc-aquatics-club/">Merch</a>
           <a href="https://www.clubassistant.com/club/login_form.cfm?c=1344">Member login</a>
           <Link href="/scholarships">Scholarships</Link>
           <Link href="/donate">Donate</Link>
