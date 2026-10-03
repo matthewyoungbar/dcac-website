@@ -1,4 +1,4 @@
-import { useEffect } from 'preact/hooks'
+import { useEffect, useRef } from 'preact/hooks'
 import { Router, Route, Switch, useLocation } from 'wouter'
 import { Header } from './components/Header.tsx'
 import { Footer } from './components/Footer.tsx'
@@ -32,11 +32,38 @@ function TitleSync() {
   return null
 }
 
+/** Client-side navigation keeps the old scroll position, so start each new
+ *  page at the top (or at its #anchor). Back/forward is left alone so the
+ *  browser can restore where you were. */
+function ScrollReset() {
+  const [path] = useLocation()
+  const firstRender = useRef(true)
+  const fromHistory = useRef(false)
+
+  useEffect(() => {
+    const onPop = () => { fromHistory.current = true }
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+
+  useEffect(() => {
+    // the browser already handled the initial load, including any #anchor
+    if (firstRender.current) { firstRender.current = false; return }
+    if (fromHistory.current) { fromHistory.current = false; return }
+    const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)))
+    // 'instant' overrides the smooth scroll-behavior set on <html>
+    if (target) target.scrollIntoView({ behavior: 'instant' })
+    else window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [path])
+  return null
+}
+
 /** ssrPath is only set when prerendering; in the browser the router reads the real URL. */
 export function App({ ssrPath }: { ssrPath?: string }) {
   return (
     <Router base={routerBase} ssrPath={ssrPath}>
       <TitleSync />
+      <ScrollReset />
       <Header />
       <Switch>
         <Route path="/" component={HomePage} />

@@ -1,4 +1,6 @@
 import { Callout } from '../components/Callout.tsx'
+import teamFlagPhoto from '../assets/pictures/gg_dc_flag.webp'
+import piggybackPhoto from '../assets/pictures/outdoor_pool_piggyback.webp'
 import './ScholarshipsPage.css'
 
 const TREASURER = 'treasurer@swimdcac.org'
@@ -102,6 +104,24 @@ export function ScholarshipsPage() {
             ))}
           </div>
         </section>
+
+        {/* two portrait shots side by side; stacks on narrow screens */}
+        <figure className="sch-photos">
+          <img
+            src={teamFlagPhoto}
+            alt="About twenty DCAC swimmers in suits and costume wigs pose on the grass beside an outdoor pool under palm trees, holding up a DC flag."
+            width={900}
+            height={1200}
+            loading="lazy"
+          />
+          <img
+            src={piggybackPhoto}
+            alt="Four smiling DCAC swimmers in pairs, two riding piggyback on the other two, on the grass beside an outdoor pool."
+            width={900}
+            height={1200}
+            loading="lazy"
+          />
+        </figure>
 
         <section className="meets-section sch-fund" id="yolanda-markey">
           <h2 className="section-title">Yolanda Markey Scholarship Fund</h2>

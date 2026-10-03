@@ -12,6 +12,10 @@
 .sch-apply{margin-top:auto;padding-top:18px;font-weight:600;font-size:15px;color:var(--blue-600)}
 .sch-apply:hover{text-decoration:underline}
 
+/* photo pair between the programs and the memorial funds */
+.sch-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 36px}
+.sch-photos img{width:100%;height:auto;border-radius:var(--radius-lg)}
+
 /* memorial funds */
 .sch-fund{scroll-margin-top:90px}
 .sch-fund .section-body a,.reach a{color:var(--blue-600);font-weight:600}
@@ -32,4 +36,7 @@
 
 @media(max-width:900px){
   .sch-programs{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .sch-photos{grid-template-columns:1fr}
 }
